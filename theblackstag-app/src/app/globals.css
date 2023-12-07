@@ -25,9 +25,3 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-a {
-  text-decoration: underline;
-}
-a:hover {
-  @apply text-tbs-red;
-}
