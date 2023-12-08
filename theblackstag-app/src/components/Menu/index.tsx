@@ -6,7 +6,7 @@ import instaLogoHover from "@/../public/images/insta-hover.svg";
 import mailLogo from "@/../public/images/mail.svg";
 import mailLogoHover from "@/../public/images/mail-hover.svg";
 
-const Menu = () => {
+const Menu: React.FC<{ toggleMenu: () => void }> = ({ toggleMenu }) => {
   const menuContent = {
     email: "katja@theblackstag.nl",
     phoneNumber: "06 15 202 440",
@@ -53,6 +53,7 @@ const Menu = () => {
                 <li key={index} className="py-6">
                   <Link
                     href={item.link}
+                    onClick={toggleMenu}
                     className="text-4xl border-b leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen"
                   >
                     {item.title}

@@ -1,8 +1,7 @@
 const SuccesVerhalenPage: React.FC = () => {
   return (
-    <div>
+    <div className="container min-h-[calc(100vh-7rem)]">
       <h1>Succesverhalen</h1>
-      {/* Voeg hier de inhoud van de pagina toe */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 const OverPage: React.FC = () => {
   return (
-    <div>
-      <h1>Hello, Next.js!</h1>
+    <div className="container min-h-[calc(100vh-7rem)]">
+      <h1>Over The Black Stag</h1>
     </div>
   );
 };

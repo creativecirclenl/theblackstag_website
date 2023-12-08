@@ -23,7 +23,7 @@ const Nav: React.FC = () => {
           <Image src={menuIconOpen} alt="Menu" width={24} height={24} />
         )}
       </button>
-      {isMenuOpen && <Menu />}
+      {isMenuOpen && <Menu toggleMenu={toggleMenu} />}
     </nav>
   );
 };
