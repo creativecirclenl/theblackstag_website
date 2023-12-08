@@ -5,7 +5,7 @@ const Header: React.FC = () => {
   return (
     <header>
       <div className="container h-28 flex items-end justify-between">
-        <Logo />
+        <Logo color={false} />
         <Nav />
       </div>
     </header>

@@ -26,7 +26,12 @@ const Cases: React.FC = () => {
           <h3 className="text-[#68beec] text-2xl uppercase">Cases</h3>
           <h4 className="text-4xl font-bold">Succesverhalen</h4>
         </div>
-        <Link href="/cases">Bekijk meer werk</Link>
+        <Link
+          href="/cases"
+          className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen"
+        >
+          Bekijk meer werk
+        </Link>
       </div>
       <div className="relative mt-8 flex overflow-hidden">
         <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

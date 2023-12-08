@@ -49,7 +49,12 @@ const Diensten: React.FC = () => {
           <p className="text-sm md:text-base mb-8">
             {dienstenIntro.description}
           </p>
-          <Link href={dienstenIntro.link}>Ondek meer</Link>
+          <Link
+            href={dienstenIntro.link}
+            className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen"
+          >
+            Ondek meer
+          </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {dienstenContent.map((item, index) => (

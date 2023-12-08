@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="container flex items-center justify-between mt-12">
+      <div className="container flex justify-between mt-12">
         <div className="w-full flex flex-col md:w-1/2">
           <Image
             src={logo}
@@ -114,21 +114,29 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="w-full md:w-1/4">
-          <h3 className="text-xl">Diensten</h3>
+          <h3 className="text-xl mb-1">Diensten</h3>
           <ul>
             {footerContent.services.map((service, index) => (
               <li key={index}>
-                <Link href={service.link}>{service.name}</Link>
+                <Link
+                  href={service.link}
+                  className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen"
+                >
+                  {service.name}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
         <div className="w-full md:w-1/4">
-          <h3>Succesverhalen</h3>
+          <h3 className="text-xl mb-1">Succesverhalen</h3>
           <ul>
             {footerContent.successStories.map((story, index) => (
               <li key={index}>
-                <Link href={story.link} className="">
+                <Link
+                  href={story.link}
+                  className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen"
+                >
                   {story.name}
                 </Link>
               </li>

@@ -1,5 +1,9 @@
 "use client";
 import { useState } from "react";
+import Menu from "../Menu";
+import Image from "next/image";
+import menuIconOpen from "@/../public/images/menu-open.svg";
+import menuIconClose from "@/../public/images/menu-sluiten.svg";
 
 const Nav: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,23 +13,17 @@ const Nav: React.FC = () => {
   };
   return (
     <nav>
-      <button onClick={toggleMenu}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-16 w-16"
-          fill="none"
-          viewBox="0 0 36 26"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
+      <button
+        onClick={toggleMenu}
+        className={isMenuOpen ? "fixed z-50 top-24 -mt-2 -ms-6" : ""}
+      >
+        {isMenuOpen ? (
+          <Image src={menuIconClose} alt="Close" width={24} height={24} />
+        ) : (
+          <Image src={menuIconOpen} alt="Menu" width={24} height={24} />
+        )}
       </button>
-      {isMenuOpen && "open"}
+      {isMenuOpen && <Menu />}
     </nav>
   );
 };
