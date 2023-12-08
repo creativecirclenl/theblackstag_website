@@ -40,36 +40,41 @@ const Menu: React.FC<{ toggleMenu: () => void }> = ({ toggleMenu }) => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 bottom-0 h-screen w-screen">
+    <div className="fixed z-10 top-0 left-0 right-0 bottom-0 h-screen w-screen">
       <div className="bg-black h-full w-full">
-        <div className="container h-28 flex justify-between items-end ">
+        <div className="container h-28 flex flex-col justify-end md:flex-row md:justify-between md:items-end ">
           <Logo color={true} />
-          <p className="md:w-1/3">Laten we samenwerken</p>
+          <p className="text-sm md:text-base md:w-1/3">Laten we samenwerken</p>
         </div>
         <div className="container h-[calc(100vh-7rem)] flex flex-col justify-end">
-          <div className="flex justify-between items-end">
-            <ul>
+          <div className="flex flex-col md:flex-row justify-between items-end">
+            <ul className="w-full pb-6 md:pb-0 md:w-2/3">
               {menuContent.items.map((item, index) => (
-                <li key={index} className="py-6">
+                <li key={index} className="py-3 md:py-6">
                   <Link
                     href={item.link}
                     onClick={toggleMenu}
-                    className="text-4xl border-b leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen"
+                    className="text-2xl md:text-4xl border-b md:leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen"
                   >
                     {item.title}
                   </Link>
-                  <p className="text-tbsgray">{item.description}</p>
+                  <p className="text-tbsgray text-sm md:text-base">
+                    {item.description}
+                  </p>
                 </li>
               ))}
             </ul>
             <div className="w-full md:w-1/3">
-              <a href={`mailto:${menuContent.email}`} className="text-3xl">
+              <a
+                href={`mailto:${menuContent.email}`}
+                className="text-xl md:text-3xl"
+              >
                 {menuContent.email}
               </a>
               <br />
               <a
                 href={`tel:${menuContent.phoneNumber.replace(/\s/g, "")}`}
-                className="text-3xl"
+                className="text-xl md:text-3xl"
               >
                 {menuContent.phoneNumber}
               </a>
