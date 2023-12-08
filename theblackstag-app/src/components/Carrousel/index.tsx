@@ -27,14 +27,18 @@ const Carrousel: React.FC = () => {
   return (
     <div className="flex items-center justify-center my-12 h-40 overflow-hidden">
       {logos.map((logo, index) => (
-        <Image
+        <div
           key={index}
-          src={logo}
-          width={100}
-          height={100}
-          className="w-full h-40 p-2 md:w-1/6 md:p-4 even:md:border-x border-gray-300"
-          alt="Client Logo"
-        />
+          className="w-1/2 p-2 md:w-1/6 md:p-4 even:md:border-x md:border-gray-300"
+        >
+          <Image
+            src={logo}
+            width={100}
+            height={100}
+            className="mx-auto h-40"
+            alt="Client Logo"
+          />
+        </div>
       ))}
     </div>
   );
