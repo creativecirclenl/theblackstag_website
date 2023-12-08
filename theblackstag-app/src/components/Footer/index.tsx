@@ -5,6 +5,7 @@ import instaLogo from "@/../public/images/insta.svg";
 import instaLogoHover from "@/../public/images/insta-hover.svg";
 import mailLogo from "@/../public/images/mail.svg";
 import mailLogoHover from "@/../public/images/mail-hover.svg";
+import Logo from "../Header/logo";
 
 const footerContent = {
   title: "Laten we samenwerken",
@@ -36,20 +37,23 @@ const footerContent = {
 const Footer: React.FC = () => {
   return (
     <footer>
-      <div className="container flex items-end justify-between">
+      <div className="container flex flex-col md:flex-row items-end justify-between">
         <div className="w-full md:w-2/3">
-          <h3 className="w-fit text-7xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-none bg-gradient-to-r from-tbsblue to-tbsgreen bg-clip-text text-transparent font-bold">
+          <h3 className="w-fit text-5xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-none bg-gradient-to-r from-tbsblue to-tbsgreen bg-clip-text text-transparent font-bold">
             {footerContent.title}
           </h3>
         </div>
         <div className="w-full md:w-1/3">
-          <a href={`mailto:${footerContent.email}`} className="text-3xl">
+          <a
+            href={`mailto:${footerContent.email}`}
+            className="text-xl md:text-3xl"
+          >
             {footerContent.email}
           </a>
           <br />
           <a
             href={`tel:${footerContent.phoneNumber.replace(/\s/g, "")}`}
-            className="text-3xl"
+            className="text-xl md:text-3xl"
           >
             {footerContent.phoneNumber}
           </a>
@@ -62,14 +66,9 @@ const Footer: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="container flex justify-between mt-12">
-        <div className="w-full flex flex-col md:w-1/2">
-          <Image
-            src={logo}
-            width={400}
-            height={400}
-            alt="The Black Stag logo"
-          />
+      <div className="container flex flex-col md:flex-row justify-between mt-12">
+        <div className="w-full flex gap-4 md:flex-col md:gap-0 md:w-1/2">
+          <Logo color={false} />
           <div className="flex gap-4 pt-4">
             <a
               href="https://www.instagram.com/theblackstagvormgeving/"
@@ -113,7 +112,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
-        <div className="w-full md:w-1/4">
+        <div className="w-full my-8 md:my-0 md:w-1/4">
           <h3 className="text-xl mb-1">Diensten</h3>
           <ul>
             {footerContent.services.map((service, index) => (
@@ -144,14 +143,14 @@ const Footer: React.FC = () => {
           </ul>
         </div>
       </div>
-      <div className="container flex items-center justify-between mt-12 border-t">
+      <div className="container flex flex-col-reverse md:flex-row items-center justify-between mt-12 border-t">
         <div className="w-full md:w-1/2 py-4">
           <p className="text-base">
             © {new Date().getFullYear()} {footerContent.address.title}. All
             Rights Reserved.
           </p>
         </div>
-        <ul className="w-full md:w-1/2 flex items-center justify-end gap-8">
+        <ul className="w-full md:w-1/2 flex items-center justify-center md:justify-end gap-8">
           {footerContent.footerLinks.map((footerLink, index) => (
             <li key={index}>
               <Link href={footerLink.link} className="hover:text-tbsred">
