@@ -54,7 +54,7 @@ const Menu: React.FC<{ toggleMenu: () => void }> = ({ toggleMenu }) => {
                   <Link
                     href={item.link}
                     onClick={toggleMenu}
-                    className="text-2xl md:text-4xl border-b md:leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen hover:border-b-0"
+                    className="text-2xl md:text-4xl border-b md:leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
                   >
                     {item.title}
                   </Link>

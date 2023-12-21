@@ -51,7 +51,7 @@ const Diensten: React.FC = () => {
           </p>
           <Link
             href={dienstenIntro.link}
-            className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen"
+            className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
           >
             Ondek meer
           </Link>

@@ -28,7 +28,7 @@ const Cases: React.FC = () => {
         </div>
         <Link
           href="/cases"
-          className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen"
+          className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
         >
           Bekijk meer werk
         </Link>
