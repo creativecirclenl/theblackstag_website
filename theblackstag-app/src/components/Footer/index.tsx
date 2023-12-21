@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/../public/images/logo-wit.svg";
 import instaLogo from "@/../public/images/insta.svg";
 import instaLogoHover from "@/../public/images/insta-hover.svg";
 import mailLogo from "@/../public/images/mail.svg";
