@@ -5,7 +5,7 @@ const DienstenPage: React.FC = () => {
     <main>
       <Intro />
       <section className="container mt-16">
-        <div className="w-2/3">
+        <div className="md:w-2/3">
           <h2 className="font-medium text-2xl">
             Ik ben niet bang om uitdagingen aan te gaan!
           </h2>
