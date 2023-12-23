@@ -65,8 +65,11 @@ const DienstenPage: React.FC = () => {
       <section className="container mt-16">
         <div>
           <h2 className="font-medium text-xl">Waarmeen kan ik je helpen?</h2>
-          {content.categories.map((category) => (
-            <div className="md:flex items-start justify-start border-t min-h-40 py-16">
+          {content.categories.map((category, index) => (
+            <div
+              key={index}
+              className="md:flex items-start justify-start border-t min-h-40 py-16"
+            >
               <div className="md:w-1/3">
                 <div className="max-w-xs">
                   <Link
