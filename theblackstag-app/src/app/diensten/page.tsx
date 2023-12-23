@@ -1,5 +1,9 @@
 import Intro from "@/components/Home/Intro";
+import Accordion from "@/components/Accordion";
 import Link from "next/link";
+import restyleLindi from "@/../public/images/logo-restyling-lindi.png";
+import Image from "next/image";
+import Cases from "@/components/Home/Cases";
 
 const DienstenPage: React.FC = () => {
   const content = {
@@ -31,6 +35,29 @@ const DienstenPage: React.FC = () => {
       },
     ],
   };
+
+  const designstepscontent = [
+    {
+      title: "01. Contact en briefing",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed blandit mauris. Phasellus eget pellentesque est. Sed vitae sapien quam. Ut ut neque hendrerit, sollicitudin nisi sed, tincidunt mauris. Donec orci odio, tempus vel fermentum eget, blandit non lacus. Nullam commodo quam nec tempus ornare. Proin ex elit, facilisis et orci eget, euismod sodales lectus. In non tellus est. Aliquam et tellus magna.",
+    },
+    {
+      title: "02. Analyse en eerste ontwerpfase",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed blandit mauris. Phasellus eget pellentesque est. Sed vitae sapien quam. Ut ut neque hendrerit, sollicitudin nisi sed, tincidunt mauris. Donec orci odio, tempus vel fermentum eget, blandit non lacus. Nullam commodo quam nec tempus ornare. Proin ex elit, facilisis et orci eget, euismod sodales lectus. In non tellus est. Aliquam et tellus magna.",
+    },
+    {
+      title: "03. Design",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed blandit mauris. Phasellus eget pellentesque est. Sed vitae sapien quam. Ut ut neque hendrerit, sollicitudin nisi sed, tincidunt mauris. Donec orci odio, tempus vel fermentum eget, blandit non lacus. Nullam commodo quam nec tempus ornare. Proin ex elit, facilisis et orci eget, euismod sodales lectus. In non tellus est. Aliquam et tellus magna.",
+    },
+    {
+      title: "04. Oplevering en ondersteuning",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed blandit mauris. Phasellus eget pellentesque est. Sed vitae sapien quam. Ut ut neque hendrerit, sollicitudin nisi sed, tincidunt mauris. Donec orci odio, tempus vel fermentum eget, blandit non lacus. Nullam commodo quam nec tempus ornare. Proin ex elit, facilisis et orci eget, euismod sodales lectus. In non tellus est. Aliquam et tellus magna.",
+    },
+  ];
   return (
     <main>
       <Intro />
@@ -85,6 +112,30 @@ const DienstenPage: React.FC = () => {
           ))}
         </div>
       </section>
+      <section className="relative mt-16">
+        <div className="container flex flex-col md:flex-row">
+          <div className="md:w-1/2 h-[800px] flex items-center">
+            <div>
+              <h2 className="text-tbsorange text-2xl pb-8">
+                HOE WERKT THE BLACK STAG?
+              </h2>
+              <h3 className="text-4xl font-medium md:w-1/2 pb-8">
+                Het ontwerpproces in vier stappen
+              </h3>
+              <Accordion content={designstepscontent} />
+            </div>
+          </div>
+          <div className="md:absolute top-0 right-0">
+            <Image
+              src={restyleLindi}
+              width={640}
+              height={800}
+              alt="restyle lindi"
+            />
+          </div>
+        </div>
+      </section>
+      <Cases />
     </main>
   );
 };

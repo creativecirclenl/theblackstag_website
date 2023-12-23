@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import instaLogo from "@/../public/images/insta.svg";
@@ -5,6 +6,7 @@ import instaLogoHover from "@/../public/images/insta-hover.svg";
 import mailLogo from "@/../public/images/mail.svg";
 import mailLogoHover from "@/../public/images/mail-hover.svg";
 import Logo from "../Header/logo";
+import { usePathname } from "next/navigation";
 
 const footerContent = {
   title: "Laten we samenwerken",
@@ -34,11 +36,20 @@ const footerContent = {
 };
 
 const Footer: React.FC = () => {
+  const pathname = usePathname();
+  const color =
+    pathname === "/"
+      ? "bg-gradient-to-r from-tbsblue to-tbsgreen"
+      : pathname === "/diensten"
+      ? "bg-gradient-to-r from-tbsorange to-tbsred"
+      : "";
   return (
     <footer>
       <div className="container flex flex-col md:flex-row items-end justify-between">
         <div className="w-full md:w-2/3">
-          <h3 className="w-fit text-5xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-none bg-gradient-to-r from-tbsblue to-tbsgreen bg-clip-text text-transparent font-bold">
+          <h3
+            className={`w-fit text-5xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-none ${color} bg-clip-text text-transparent font-bold`}
+          >
             {footerContent.title}
           </h3>
         </div>

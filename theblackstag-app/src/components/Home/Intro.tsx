@@ -17,7 +17,7 @@ const Intro: React.FC = () => {
           title: "Groot Denken",
           subtitle: "& oplossingen maken",
           colors: "from-tbsorange to-tbsyellow",
-          size: "w-1/2 text-4xl md:text-[166.5px]",
+          size: "w-fit md:w-1/2 text-7xl md:text-[166.5px]",
           subsize: "text-lg md:text-[67px]",
         }
       : pathname === "/cases"
