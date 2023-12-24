@@ -11,6 +11,7 @@ export default function Home() {
     Intro: {
       title: "Hallo",
       subtitle: "Welkom bij The Black Stag",
+      description: "",
       colors: "from-tbsgreen to-tbsblue",
       size: "w-fit text-8xl md:text-[333px]",
       subsize: "text-xl md:text-[87px]",
