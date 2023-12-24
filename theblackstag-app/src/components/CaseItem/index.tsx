@@ -17,7 +17,7 @@ const CaseItem: React.FC<CaseItemProps> = ({ title, description, image }) => {
       ? "hover:bg-tbsgreen"
       : pathname === "/diensten"
       ? "hover:bg-tbsorange"
-      : "";
+      : "hover:bg-tbsred";
   return (
     <Link href="/cases">
       <div className={`group relative h-[560px] bg-tbsgray ${color} p-8`}>

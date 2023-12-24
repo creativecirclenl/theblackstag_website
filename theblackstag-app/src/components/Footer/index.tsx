@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
       ? "bg-gradient-to-r from-tbsblue to-tbsgreen"
       : pathname === "/diensten"
       ? "bg-gradient-to-r from-tbsorange to-tbsred"
-      : "";
+      : "bg-gradient-to-r from-tbsorange to-tbsred";
   return (
     <footer>
       <div className="container flex flex-col md:flex-row items-end justify-between">
@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
             {footerContent.services.map((service, index) => (
               <li key={index}>
                 <Link
-                  href={service.link}
+                  href={`/diensten${service.link}`}
                   className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen"
                 >
                   {service.name}
@@ -143,7 +143,7 @@ const Footer: React.FC = () => {
             {footerContent.successStories.map((story, index) => (
               <li key={index}>
                 <Link
-                  href={story.link}
+                  href={`/cases${story.link}`}
                   className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
                 >
                   {story.name}
