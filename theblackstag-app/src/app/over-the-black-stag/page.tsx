@@ -1,6 +1,5 @@
 import DienstenTable from "@/components/Diensten/DienstenTable";
 import Intro from "@/components/Home/Intro";
-import { title } from "process";
 
 const OverPage: React.FC = () => {
   const content = {
