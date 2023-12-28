@@ -17,11 +17,11 @@ const Intro: React.FC<IntroProps> = ({ content }) => {
       >
         {content.title}
       </h2>
-      <div className="flex items-center">
+      <div className="md:flex items-center py-4">
         <h2 className={`${content.subsize} leading-none font-medium`}>
           {content.subtitle}
         </h2>
-        <p className="md:w-1/3">{content.description}</p>
+        <p className="w-full md:w-1/3 py-4">{content.description}</p>
       </div>
     </section>
   );
