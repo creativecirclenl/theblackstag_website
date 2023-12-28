@@ -35,20 +35,22 @@ const Team = () => {
   ];
 
   return (
-    <div className="flex flex-wrap">
-      {teamMembers.map((member, index) => (
-        <div
-          key={index}
-          className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2"
-        >
-          <img src={member.image} alt={member.name} className="w-full" />
-          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2">
-            <h3 className="text-lg font-bold">{member.name}</h3>
-            <p>Role: {member.role}</p>
+    <section className="container text-white py-20">
+      <div className="flex flex-wrap">
+        {teamMembers.map((member, index) => (
+          <div
+            key={index}
+            className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2"
+          >
+            <img src={member.image} alt={member.name} className="w-full" />
+            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2">
+              <h3 className="text-lg font-bold">{member.name}</h3>
+              <p>Role: {member.role}</p>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
