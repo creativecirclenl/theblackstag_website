@@ -1,5 +1,6 @@
 import DienstenTable from "@/components/Diensten/DienstenTable";
 import Intro from "@/components/Home/Intro";
+import Team from "@/components/Team";
 
 const OverPage: React.FC = () => {
   const content = {
@@ -40,6 +41,7 @@ const OverPage: React.FC = () => {
     <main>
       <Intro content={content.Intro} />
       <DienstenTable content={content.Dienstentable} />
+      <Team />
     </main>
   );
 };
