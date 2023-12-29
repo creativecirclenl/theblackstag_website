@@ -13,6 +13,7 @@ const config: Config = {
         tbsgreen: "#388379",
         tbsorange: "#ee774f",
         tbsred: "#e61a60",
+        tbspurple: "#a6226f",
         tbsyellow: "#fac743",
         tbsgray: "#4a4a49",
       },
