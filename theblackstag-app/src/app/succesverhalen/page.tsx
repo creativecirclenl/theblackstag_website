@@ -1,13 +1,5 @@
 import Intro from "@/components/Home/Intro";
-import Image from "next/image";
-
-interface SuccesVerhaal {
-  type: string;
-  title: string;
-  photo: string;
-  subtitle: string;
-  hashtags: string[];
-}
+import SuccesVerhalen from "@/components/SuccesVerhalen";
 
 const SuccesVerhalenPage: React.FC = () => {
   const content = {
@@ -24,6 +16,7 @@ const SuccesVerhalenPage: React.FC = () => {
       {
         type: "Rebranding",
         title: "Fortune Factory",
+        slug: "fortune-factory",
         photo: "/images/fortunefactory.jpg",
         subtitle: "Rebranding en compleet nieuwe siging",
         hashtags: ["#rebranding", "#signing", "#huisstijl"],
@@ -31,6 +24,7 @@ const SuccesVerhalenPage: React.FC = () => {
       {
         type: "Advertentie",
         title: "Adverts",
+        slug: "adverts",
         photo: "/images/adverts.svg",
         subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         hashtags: ["#ADVERTENTIE", "#VORMGEVING", "#KLANTNAAM"],
@@ -38,6 +32,7 @@ const SuccesVerhalenPage: React.FC = () => {
       {
         type: "Huisstijl",
         title: "Lorem ipsum dolor",
+        slug: "lorem-ipsum-dolor",
         photo: "/images/placeholder.svg",
         subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         hashtags: ["#HUISSTIJL", "#ONTWERP", "#SIGNING"],
@@ -45,6 +40,7 @@ const SuccesVerhalenPage: React.FC = () => {
       {
         type: "Huisstijl",
         title: "Lorem ipsum dolor",
+        slug: "lorem-ipsum-dolor",
         photo: "/images/placeholder.svg",
         subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         hashtags: ["#HUISSTIJL", "#ONTWERP", "#SIGNING"],
@@ -52,6 +48,7 @@ const SuccesVerhalenPage: React.FC = () => {
       {
         type: "Huisstijl",
         title: "Lorem ipsum dolor",
+        slug: "lorem-ipsum-dolor",
         photo: "/images/placeholder.svg",
         subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         hashtags: ["#HUISSTIJL", "#ONTWERP", "#SIGNING"],
@@ -59,6 +56,7 @@ const SuccesVerhalenPage: React.FC = () => {
       {
         type: "Huisstijl",
         title: "Lorem ipsum dolor",
+        slug: "lorem-ipsum-dolor",
         photo: "/images/placeholder.svg",
         subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         hashtags: ["#HUISSTIJL", "#ONTWERP", "#SIGNING"],
@@ -66,6 +64,7 @@ const SuccesVerhalenPage: React.FC = () => {
       {
         type: "Huisstijl",
         title: "Lorem ipsum dolor",
+        slug: "lorem-ipsum-dolor",
         photo: "/images/placeholder.svg",
         subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         hashtags: ["#HUISSTIJL", "#ONTWERP", "#SIGNING"],
@@ -73,6 +72,7 @@ const SuccesVerhalenPage: React.FC = () => {
       {
         type: "Huisstijl",
         title: "Lorem ipsum dolor",
+        slug: "lorem-ipsum-dolor",
         photo: "/images/placeholder.svg",
         subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         hashtags: ["#HUISSTIJL", "#ONTWERP", "#SIGNING"],
@@ -83,45 +83,7 @@ const SuccesVerhalenPage: React.FC = () => {
   return (
     <div className="container min-h-[calc(100vh-7rem)]">
       <Intro content={content.Intro} />
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-        {content.SuccesVerhalen.map(
-          (succesverhaal: SuccesVerhaal, index: number) => (
-            <>
-              <div key={index} className="flex flex-col justify-between">
-                <div className="relative flex flex-col justify-between bg-gradient-to-b from-tbspurple to-tbsred h-[480px]">
-                  <Image
-                    className="hover:opacity-15 transition-opacity duration-500 ease-in-out"
-                    src={succesverhaal.photo}
-                    fill
-                    alt={succesverhaal.title}
-                  />
-                  <div className="absolute z-10 left-0 top-0 flex flex-col justify-between">
-                    <div className="flex flex-col justify-between p-12">
-                      <h2 className="text-2xl">{succesverhaal.type}</h2>
-                      <h3 className="text-4xl font-semibold">
-                        {succesverhaal.title}
-                      </h3>
-                      <p>{succesverhaal.subtitle}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col justify-between">
-                  <p className="uppercase text-lg py-4">
-                    {succesverhaal.hashtags}
-                  </p>
-                </div>
-              </div>
-              {index === 3 && (
-                <div className="col-span-2 my-12">
-                  <h3 className="w-fit md:w-1/2 text-5xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-none bg-gradient-to-r from-tbspurple to-tbsred bg-clip-text text-transparent font-bold">
-                    Laten we samenwerken
-                  </h3>
-                </div>
-              )}
-            </>
-          )
-        )}
-      </section>
+      <SuccesVerhalen content={content.SuccesVerhalen} />
     </div>
   );
 };
