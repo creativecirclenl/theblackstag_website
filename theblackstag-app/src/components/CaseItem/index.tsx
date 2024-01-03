@@ -13,7 +13,7 @@ interface CaseItemProps {
 const CaseItem: React.FC<CaseItemProps> = ({ title, description, image }) => {
   const pathname = usePathname();
   const color =
-    pathname === "/"
+    pathname === "/" || pathname === "/succesverhalen/fortune-factory"
       ? "hover:bg-tbsgreen"
       : pathname === "/diensten"
       ? "hover:bg-tbsorange"
