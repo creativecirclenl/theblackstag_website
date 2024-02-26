@@ -17,22 +17,33 @@ const OverPage: React.FC = () => {
       title: "Wat maakt de The Black Stag anders dan andere",
       diensten: [
         {
-          title: "Eigenzinnig",
+          title: "Even voorstellen",
           slug: "",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed blandit mauris. Phasellus eget pellentesque est. Sed vitae sapien quam. Ut ut neque hendrerit, sollicitudin nisi sed, tincidunt mauris. Donec orci odio, tempus vel fermentum eget, blandit non lacus. Nullam commodo quam nec tempus ornare. Proin ex elit, facilisis et orci eget, euismod sodales lectus. In non tellus est. Aliquam et tellus magna.",
+            "Hallo, ik ben Katja, de eigenaar van The Black Stag. In 2014 heb ik mijn droom nagejaagd en ben ik mijn eigen reclamebureau gestart. Met jarenlange ervaring ben ik uitgegroeid tot een veelzijdige professional in de branche.",
         },
         {
-          title: "Je tijdelijke collega",
+          title: "",
           slug: "",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed blandit mauris. Phasellus eget pellentesque est. Sed vitae sapien quam. Ut ut neque hendrerit, sollicitudin nisi sed, tincidunt mauris. Donec orci odio, tempus vel fermentum eget, blandit non lacus. Nullam commodo quam nec tempus ornare. Proin ex elit, facilisis et orci eget, euismod sodales lectus. In non tellus est. Aliquam et tellus magna.",
+            "Met mijn passie voor het vak en een creatieve geest, verzorg ik inspirerende opdrachten voor zowel bedrijven als particulieren. Ben je op zoek naar een opvallend concept en een spetterend design? Aarzel dan niet om mij een e-mail te sturen om kennis te maken!",
         },
         {
           title: "Multifunctioneel",
           slug: "",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed blandit mauris. Phasellus eget pellentesque est. Sed vitae sapien quam. Ut ut neque hendrerit, sollicitudin nisi sed, tincidunt mauris. Donec orci odio, tempus vel fermentum eget, blandit non lacus. Nullam commodo quam nec tempus ornare. Proin ex elit, facilisis et orci eget, euismod sodales lectus. In non tellus est. Aliquam et tellus magna.",
+            "Dankzij mijn jarenlange ervaring in diverse branches, zowel B2B als B2C, ben ik breed inzetbaar. Of je nu een verpakking nodig hebt die in winkels door heel Nederland komt te liggen, je pand en wagenpark wilt voorzien van je bedrijfsidentiteit, of als je op zoek bent naar iemand die jullie trouwkaarten kan ontwerpen. Ik kan je bij het gehele proces helpen.",
+        },
+        {
+          title: "",
+          slug: "",
+          description:
+            "Gedurende mijn loopbaan heb ik een uitgebreid netwerk opgebouwd, waardoor ik je van begin tot eind kan ondersteunen bij het ontwerpen en realiseren van signage en drukwerk, het verzorgen van diverse foto- en videografie uitingen en meer. Geen opdracht is te uitdagend. Samen met een team van enthousiaste professionals kunnen we elk project aan!",
+        },
+        {
+          title: "",
+          slug: "",
+          description: "Welk project wil je samen met mij starten?",
         },
       ],
     },
