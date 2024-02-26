@@ -1,13 +1,17 @@
-const Foto: React.FC = () => {
+import Image from "next/image";
+
+export default function Foto() {
   return (
     <section className="overflow-hidden">
       <div className="container">
-        <div className="w-screen aspect-video bg-tbsgreen flex items-center justify-center lg:-ms-8">
-          <p className="text-4xl md:text-9xl">[FOTO]</p>
+        <div className="relative w-screen aspect-video bg-tbsgreen flex items-center justify-center lg:-ms-8">
+          <Image
+            src={"/images/welkombijtheblackstag.webp"}
+            alt="Welkom bij the blackstag"
+            fill
+          />
         </div>
       </div>
     </section>
   );
-};
-
-export default Foto;
+}
