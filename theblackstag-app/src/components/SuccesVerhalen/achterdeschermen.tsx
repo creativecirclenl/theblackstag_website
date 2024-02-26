@@ -1,30 +1,34 @@
 import Image from "next/image";
 
-const AchterDeSchermen: React.FC<{ content: any }> = ({ content }) => {
-  return (
+export default function AchterDeSchermen({
+  content,
+}: {
+  content:
+    | {
+        colors: string;
+        achterdeschermen: { title: string; description: string; image: string };
+      }
+    | undefined;
+}) {
+  return content ? (
     <section className="container my-24 flex h-[800px]">
       <div className="md:w-1/4 flex flex-col justify-end">
         <h2
-          className={`relative w-[200%] block text-8xl font-bold mb-4 bg-gradient-to-r ${content?.colors} bg-clip-text text-transparent`}
+          className={`relative w-[200%] block text-8xl font-bold mb-4 bg-gradient-to-r ${content.colors} bg-clip-text text-transparent`}
         >
-          Achter de schermen
+          {content.achterdeschermen.title}
         </h2>
-        <p className="ps-0 p-12">
-          Cras commodo a dolor vels agitis. Aliquam interdum suscipit neque non
-          egestas ficitur. Quisque sit amet erat placerat, lacinia quam.
-        </p>
+        <p className="ps-0 p-12">{content.achterdeschermen.description}</p>
       </div>
       <div className="md:w-3/4">
         <Image
-          src="/images/ff-achterdeschermen.jpg"
+          src={content.achterdeschermen.image}
           width={690}
           height={1040}
-          alt="achterdeschermen"
+          alt={content.achterdeschermen.title}
           className="w-full h-full object-cover -z-10"
         />
       </div>
     </section>
-  );
-};
-
-export default AchterDeSchermen;
+  ) : null;
+}

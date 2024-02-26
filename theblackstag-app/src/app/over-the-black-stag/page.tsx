@@ -2,7 +2,7 @@ import DienstenTable from "@/components/Diensten/DienstenTable";
 import Intro from "@/components/Home/Intro";
 import Team from "@/components/Team";
 
-const OverPage: React.FC = () => {
+export default function OverPage() {
   const content = {
     Intro: {
       title: "Ik ben",
@@ -55,6 +55,4 @@ const OverPage: React.FC = () => {
       <Team />
     </main>
   );
-};
-
-export default OverPage;
+}

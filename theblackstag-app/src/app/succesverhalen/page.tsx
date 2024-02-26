@@ -1,7 +1,7 @@
 import Intro from "@/components/Home/Intro";
 import SuccesVerhalen from "@/components/SuccesVerhalen";
 
-const SuccesVerhalenPage: React.FC = () => {
+export default function SuccesVerhalenPage() {
   const content = {
     Intro: {
       title: "Succes-verhalen",
@@ -22,12 +22,12 @@ const SuccesVerhalenPage: React.FC = () => {
         hashtags: ["#rebranding", "#signing", "#huisstijl"],
       },
       {
-        type: "Advertentie",
-        title: "Adverts",
-        slug: "adverts",
-        photo: "/images/adverts.svg",
-        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        hashtags: ["#ADVERTENTIE", "#VORMGEVING", "#KLANTNAAM"],
+        type: "Geboortekaartje",
+        title: "Geboorte kaartje voor Casper",
+        slug: "paspoort-van-casper",
+        photo: "/images/caspertop.webp",
+        subtitle: "Een persoonlijk en uniek kaartje",
+        hashtags: ["#geboortekaartje", "#VORMGEVING", "#KLANTNAAM"],
       },
       {
         type: "Huisstijl",
@@ -86,6 +86,4 @@ const SuccesVerhalenPage: React.FC = () => {
       <SuccesVerhalen content={content.SuccesVerhalen} />
     </div>
   );
-};
-
-export default SuccesVerhalenPage;
+}
