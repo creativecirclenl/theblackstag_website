@@ -1,11 +1,8 @@
-interface IntroTextProps {
-  content: {
-    title: string;
-    paragraphs: string[];
-  };
-}
-
-const IntroText: React.FC<IntroTextProps> = ({ content }) => {
+export default function IntroText({
+  content,
+}: {
+  content: { title: string; paragraphs: string[] };
+}) {
   return (
     <section className="container mt-16">
       <div className="md:w-2/3">
@@ -18,6 +15,4 @@ const IntroText: React.FC<IntroTextProps> = ({ content }) => {
       </div>
     </section>
   );
-};
-
-export default IntroText;
+}

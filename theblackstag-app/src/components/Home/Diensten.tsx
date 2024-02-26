@@ -1,41 +1,41 @@
-import visueleIdentiteit from "@/../public/images/visuele-identiteit.svg";
-import promotieEnUitingen from "@/../public/images/promotie-en-uitingen.svg";
-import fotografie from "@/../public/images/fotografie.svg";
-import hulpOpDeWerkvloer from "@/../public/images/hulp-op-de-werkvloer.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-const dienstenIntro = {
-  title: " The Black Stag Maakt",
-  subtitle: "Frisse en creatieve ontwerpoplossingen",
-  description:
-    "Het team van experts zal de volledige ontwikkelingscyclus van je product afhandelen, van idee tot uitwerking.",
-  link: "/diensten",
-};
-const dienstenContent = [
-  {
-    image: visueleIdentiteit,
-    title: "Visuele identiteit",
-    description: "Natus error sit voluptatem accus auntim doloremque lautan.",
-  },
-  {
-    image: promotieEnUitingen,
-    title: "Promotie en uitingen",
-    description: "Natus error sit voluptatem accus auntim doloremque lautan.",
-  },
-  {
-    image: fotografie,
-    title: "Fotografie",
-    description: "Natus error sit voluptatem accus auntim doloremque lautan.",
-  },
-  {
-    image: hulpOpDeWerkvloer,
-    title: "Hulp op de werkvloer",
-    description: "Natus error sit voluptatem accus auntim doloremque lautan.",
-  },
-];
-
-const Diensten: React.FC = () => {
+export default function Diensten() {
+  const dienstenIntro = {
+    title: "The Black Stag Maakt",
+    subtitle: "Frisse en creatieve ontwerpoplossingen",
+    description:
+      "Het team van experts zal de volledige ontwikkelingscyclus van je product/ of dienst afhandelen, van idee tot uitwerking.",
+    linktext: "Ontdek meer",
+    link: "/diensten",
+  };
+  const dienstenContent = [
+    {
+      image: "/images/visuele-identiteit.svg",
+      title: "Visuele identiteit",
+      description:
+        "Je hebt een idee voor een nieuw bedrijf, product of dienst. Al snel daarna is de naam hiervoor een feit, maar dan?",
+    },
+    {
+      image: "/images/promotie-en-uitingen.svg",
+      title: "Geboorte- en trouwkaarten",
+      description:
+        "Bij het creëren van jullie kaart kijken we verder dan alleen een leuk ontwerp. Samen kijken we naar papier, vorm en natuurlijk ook niet te vergeten de envelop.",
+    },
+    {
+      image: "/images/fotografie.svg",
+      title: "Fotografie",
+      description:
+        "Een sterke foto zegt meer dan duizend woorden maar sterke beelden komen in veel verschillende vormen.",
+    },
+    {
+      image: "/images/hulp-op-de-werkvloer.svg",
+      title: "Hulp op de werkvloer",
+      description:
+        "Gaat je collega met zwangerschapsverlof of heeft je hardwerkende DTP’er besloten die wereldreis te gaan maken? Dan is The Black Stag je nieuwe tijdelijke collega.",
+    },
+  ];
   return (
     <section className="container my-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -53,7 +53,7 @@ const Diensten: React.FC = () => {
             href={dienstenIntro.link}
             className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
           >
-            Ondek meer
+            {dienstenIntro.linktext}
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -73,6 +73,4 @@ const Diensten: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default Diensten;
+}

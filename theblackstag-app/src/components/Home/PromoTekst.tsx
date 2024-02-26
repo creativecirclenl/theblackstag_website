@@ -1,6 +1,6 @@
-const promoTeksthtmlContent =
-  "<p>Fusce sagittis leo tortor, et ornare nunc molestie et. <a href='#'>Praesent at aliquam eros</a>. Morbi <a href='#'>maximus</a> ipsum fermentum feugiat lacinia. Morbi non aliquam urna, sit amet elementum nunc. Quisque a nulla aliquam lorem hendrerit <a href='#'>posuere vel sit</a> amet mauris.</p>";
-const PromoTekst: React.FC = () => {
+export default function PromoTekst() {
+  const promoTeksthtmlContent =
+    "<p>The Black stag creëert <a href='#'>communicatiemiddelen</a> om jouw bedrijf beter op de kaart te zetten. Van <a href='#'>huisstijl ontwikkeling</a> tot de volledige <a href='#'>signing</a> van je pand. Naast de B2B en B2C is The Black Stag ook actief voor particulieren. Zo kun je hier terecht voor unieke <a href='#'>geboorte-/ en trouwkaarten</a>.</p>";
   return (
     <section className="promotekst container flex items-center justify-center py-8 md:py-32 md:w-1/2">
       <div
@@ -9,6 +9,4 @@ const PromoTekst: React.FC = () => {
       />
     </section>
   );
-};
-
-export default PromoTekst;
+}
