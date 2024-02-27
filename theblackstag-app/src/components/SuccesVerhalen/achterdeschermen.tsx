@@ -20,7 +20,7 @@ export default function AchterDeSchermen({
         </h2>
         <p className="ps-0 p-12">{content.achterdeschermen.description}</p>
       </div>
-      <div className="md:w-3/4">
+      <div className="relative md:w-3/4">
         <Image
           src={content.achterdeschermen.image}
           fill
