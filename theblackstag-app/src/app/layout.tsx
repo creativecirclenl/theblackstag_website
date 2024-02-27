@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Van ontwerp tot drukwerk - The Black Stag vormgeving & meer",
   description:
     "Ben je opzoek naar een opvallend concept en een spetterend ontwerp? Dan ben je bij The Black stag vormgeving & meer op het juiste adres!",
+  metadataBase: new URL("https://www.theblackstag.nl/"),
   openGraph: {
     locale: "nl_NL",
     type: "website",
@@ -21,9 +22,25 @@ export const metadata: Metadata = {
       "Ben je opzoek naar een opvallend concept en een spetterend ontwerp? Dan ben je bij The Black stag vormgeving & meer op het juiste adres!",
     url: "https://www.theblackstag.nl/",
     siteName: "The Black Stag",
+    images: [
+      {
+        url: "/images/welkombijtheblackstag.webp",
+        width: 800,
+        height: 600,
+        alt: "Default Image",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    images: [
+      {
+        url: "/images/welkombijtheblackstag.webp",
+        width: 800,
+        height: 600,
+        alt: "Default Image",
+      },
+    ],
   },
 };
 

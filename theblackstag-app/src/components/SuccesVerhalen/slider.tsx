@@ -2,7 +2,16 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-const Slider = ({ content }: { content: any }) => {
+export default function Slider({
+  slider,
+}: {
+  slider: {
+    images: string[];
+    title: string;
+    subtitle: string;
+    description: string;
+  };
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 3 - 1 ? 0 : prevIndex + 1));
@@ -13,14 +22,14 @@ const Slider = ({ content }: { content: any }) => {
   };
 
   return (
-    <section className="container overflow-hidden my-24">
+    <section className="overflow-hidden my-24">
       <div className="md:w-[160%] md:flex md:gap-x-16 md:-translate-x-[18.5%]">
-        {content?.slider.images.map((image: string, index: number) =>
+        {slider.images.map((image: string, index: number) =>
           index !== 2 ? (
             <div key={index} className="md:w-2/5 h-[60vh] overflow-hidden">
               <Image
                 src={
-                  content?.slider.images[
+                  slider.images[
                     currentIndex === 0
                       ? index
                       : currentIndex === 1
@@ -30,7 +39,7 @@ const Slider = ({ content }: { content: any }) => {
                       : index - 1
                   ] || "placeholder.svg"
                 }
-                alt={content?.slider.title}
+                alt={slider.title}
                 height={600}
                 width={1200}
                 className="w-full h-full object-cover"
@@ -39,18 +48,16 @@ const Slider = ({ content }: { content: any }) => {
           ) : (
             <div
               key={index}
-              className="slider md:w-2/5 h-[60vh] overflow-hidden flex flex-col justify-center"
+              className="slider no-scrollbar md:w-2/5 h-[60vh] overflow-y-scroll flex flex-col justify-start"
             >
               <h2 className="text-2xl uppercase text-tbsorange">
-                {content?.slider.title}
+                {slider.title}
               </h2>
-              <h3 className="text-4xl w-1/2 mb-4">
-                {content?.slider.subtitle}
-              </h3>
+              <h3 className="text-4xl w-1/2 mb-4">{slider.subtitle}</h3>
               <div
                 className="my-4 text-gray-100"
                 dangerouslySetInnerHTML={{
-                  __html: content?.slider.description,
+                  __html: slider.description,
                 }}
               />
               <div>
@@ -79,11 +86,11 @@ const Slider = ({ content }: { content: any }) => {
         <div className="md:w-2/5 h-[60vh] overflow-hidden">
           <Image
             src={
-              content?.slider.images[
+              slider.images[
                 currentIndex === 0 ? 2 : currentIndex === 1 ? 0 : 1
               ] || "placeholder.svg"
             }
-            alt={content?.slider.title || "placeholder"}
+            alt={slider.title || "placeholder"}
             height={600}
             width={1200}
             className="w-full h-full object-cover"
@@ -92,6 +99,4 @@ const Slider = ({ content }: { content: any }) => {
       </div>
     </section>
   );
-};
-
-export default Slider;
+}

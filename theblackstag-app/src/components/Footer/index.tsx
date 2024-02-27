@@ -35,7 +35,7 @@ const footerContent = {
   ],
 };
 
-const Footer: React.FC = () => {
+export default function Footer() {
   const pathname = usePathname();
   const color =
     pathname === "/"
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
       : "bg-gradient-to-r from-tbsorange to-tbsred";
   return (
     <footer>
-      <div className="container flex flex-col md:flex-row items-end justify-between">
+      <div className="container flex flex-col md:flex-row items-end justify-between pb-12">
         <div className="w-full md:w-2/3">
           <h3
             className={`w-fit text-5xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-none ${color} bg-clip-text text-transparent font-bold`}
@@ -172,6 +172,4 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

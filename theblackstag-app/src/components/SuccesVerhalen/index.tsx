@@ -1,28 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-interface SuccesVerhaal {
+type SuccesVerhaal = {
   type: string;
   title: string;
   slug: string;
   photo: string;
   subtitle: string;
   hashtags: string[];
-}
-interface SuccesVerhalenProps {
-  content: SuccesVerhaal[];
-}
+};
 
-const SuccesVerhalen: React.FC<SuccesVerhalenProps> = ({ content }) => {
+export default function SuccesVerhalen({
+  content,
+}: {
+  content: SuccesVerhaal[];
+}) {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
       {content.map((succesverhaal: SuccesVerhaal, index: number) => (
         <React.Fragment key={index}>
           <div className="group flex flex-col justify-between">
             <Link href={`/succesverhalen/${succesverhaal.slug}`}>
-              <div className="relative flex flex-col justify-between bg-gradient-to-b from-tbspurple to-tbsred h-[480px]">
+              <div className="relative flex flex-col justify-between bg-gradient-to-b from-tbspurple to-tbsred h-[480px] overflow-hidden">
                 <Image
-                  className="group-hover:opacity-15 transition-opacity duration-500 ease-in-out"
+                  className="group-hover:opacity-15 transition-opacity duration-500 ease-in-out object-cover"
                   src={succesverhaal.photo}
                   fill
                   alt={succesverhaal.title}
@@ -62,6 +63,4 @@ const SuccesVerhalen: React.FC<SuccesVerhalenProps> = ({ content }) => {
       ))}
     </section>
   );
-};
-
-export default SuccesVerhalen;
+}

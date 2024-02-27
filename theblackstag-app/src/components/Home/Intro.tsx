@@ -1,4 +1,6 @@
-interface IntroProps {
+export default function Intro({
+  content,
+}: {
   content: {
     size: string;
     colors: string;
@@ -7,11 +9,9 @@ interface IntroProps {
     subtitle: string;
     description: string;
   };
-}
-
-const Intro: React.FC<IntroProps> = ({ content }) => {
+}) {
   return (
-    <section className="container h-[60vh] md:h-[70vh] flex flex-col items-start justify-end mb-8">
+    <section className="container flex flex-col items-start justify-center pt-12 mb-8">
       <h2
         className={`${content.size} leading-none bg-gradient-to-r ${content.colors} bg-clip-text text-transparent font-bold`}
       >
@@ -25,6 +25,4 @@ const Intro: React.FC<IntroProps> = ({ content }) => {
       </div>
     </section>
   );
-};
-
-export default Intro;
+}
