@@ -24,8 +24,8 @@ const CaseItem: React.FC<CaseItemProps> = ({
       ? "hover:bg-tbsorange/80"
       : "hover:bg-tbsred/80";
   return (
-    <Link href={link} className="w-1/3">
-      <div className={`group relative h-[560px] ${color} p-8`}>
+    <Link href={link} className="w-80 md:w-96">
+      <div className={`group relative h-[70svh] md:h-[560px] ${color} p-8`}>
         <h3 className="invisible group-hover:visible text-2xl font-bold">
           {title}
         </h3>

@@ -5,25 +5,26 @@ import Image from "next/image";
 
 function scrollRight() {
   const element = document.querySelector("#succes-verhalen");
+  const width =
+    document.querySelector("#succes-verhalen a")?.getBoundingClientRect()
+      .width || 400;
   if (element) {
-    if (element) {
-      element.scrollBy({
-        left: 400,
-        behavior: "smooth",
-      });
-    }
+    element.scrollBy({
+      left: width,
+      behavior: "smooth",
+    });
   }
 }
 
 function scrollLeft() {
   const element = document.querySelector("#succes-verhalen");
+  const elementA = document.querySelector("#succes-verhalen a");
+  const width = elementA ? elementA.getBoundingClientRect().width + 32 : 0 || 0;
   if (element) {
-    if (element) {
-      element.scrollBy({
-        left: -400,
-        behavior: "smooth",
-      });
-    }
+    element.scrollBy({
+      left: -width,
+      behavior: "smooth",
+    });
   }
 }
 
@@ -93,7 +94,7 @@ export default function Cases() {
         className="mt-12 no-scrollbar overflow-x-scroll"
       >
         <div className="container">
-          <div className="flex gap-4 w-[233%]">
+          <div className="w-fit flex gap-4">
             {SuccesVerhalen.sort(() => Math.random() - 0.5).map(
               (succesVerhaal, index) => (
                 <CaseItem

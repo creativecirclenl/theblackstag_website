@@ -11,16 +11,16 @@ export default function AchterDeSchermen({
     | undefined;
 }) {
   return content ? (
-    <section className="container my-24 flex h-[800px]">
-      <div className="md:w-1/4 flex flex-col justify-end">
+    <section className="container md:my-24 md:flex">
+      <div className="md:w-1/4 flex flex-col justify-end md:h-[800px] ">
         <h2
-          className={`relative w-[200%] block text-8xl font-bold mb-4 bg-gradient-to-r ${content.colors} bg-clip-text text-transparent`}
+          className={`relative md:w-[200%] block text-xl md:text-8xl font-bold md:mb-4 bg-gradient-to-r ${content.colors} bg-clip-text text-transparent`}
         >
           {content.achterdeschermen.title}
         </h2>
         <p className="ps-0 p-12">{content.achterdeschermen.description}</p>
       </div>
-      <div className="relative md:w-3/4">
+      <div className="relative md:w-3/4 md:h-[800px] w-full h-[300px]">
         <Image
           src={content.achterdeschermen.image}
           fill
