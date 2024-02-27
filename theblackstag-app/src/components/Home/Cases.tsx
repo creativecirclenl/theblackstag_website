@@ -1,24 +1,79 @@
+"use client";
 import Link from "next/link";
 import CaseItem from "../CaseItem";
+import Image from "next/image";
 
-const Cases: React.FC = () => {
-  const casesContent = [
+function scrollRight() {
+  const element = document.querySelector("#succes-verhalen");
+  if (element) {
+    if (element) {
+      element.scrollBy({
+        left: 400,
+        behavior: "smooth",
+      });
+    }
+  }
+}
+
+function scrollLeft() {
+  const element = document.querySelector("#succes-verhalen");
+  if (element) {
+    if (element) {
+      element.scrollBy({
+        left: -400,
+        behavior: "smooth",
+      });
+    }
+  }
+}
+
+export default function Cases() {
+  const SuccesVerhalen = [
     {
-      title: "Case 1",
-      description: "Lorem ipsum",
-      image: "",
+      title: "Fortune Factory",
+      slug: "fortune-factory",
+      photo: "/images/fortunefactory.jpg",
+      subtitle: "Rebranding en compleet nieuwe siging",
     },
     {
-      title: "Case 2",
-      description: "Lorem ipsum",
-      image: "",
+      title: "Geboorte kaartje voor Casper",
+      slug: "casper",
+      photo: "/images/casper1.webp",
+      subtitle: "Een persoonlijk en uniek kaartje",
     },
     {
-      title: "Case 3",
-      description: "Lorem ipsum",
-      image: "",
+      title: "Anna & Wesley",
+      slug: "anna-wesley",
+      photo: "/images/anna-wesley1.webp",
+      subtitle: "Een kaartje in meerdere talen voor de hele familie.",
+    },
+    {
+      title: "Fémur Beheer",
+      slug: "femur-beheer",
+      photo: "/images/femur-beheer1.webp",
+      subtitle: "VvE saai? Nee juist helemaal hip!",
+    },
+    {
+      title: "Lindi",
+      slug: "lindi",
+      photo: "/images/lindi1.webp",
+      subtitle: "Ontwikkelingspsycholoog en Speltherapeut",
+    },
+    {
+      title: "GGD ZHZ",
+      slug: "kookboek-ggd-zhz",
+      photo: "/images/kookboek-ggd-zhz1.webp",
+      subtitle: "Een kookboek om Nieuw-Lekkerland gezonder te laten eten.",
+    },
+    {
+      title: "PT I’ts Personal",
+      slug: "pt-its-personal",
+      photo: "/images/pt-its-personal1.webp",
+      subtitle:
+        "It's Personal streeft ernaar bij te dragen aan de gezondheid en behoeften van de klant.",
     },
   ];
+
   return (
     <section className="my-48">
       <div className="container md:flex justify-between items-end">
@@ -27,27 +82,52 @@ const Cases: React.FC = () => {
           <h4 className="text-4xl font-bold">Succesverhalen</h4>
         </div>
         <Link
-          href="/cases"
+          href="/succesverhalen"
           className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
         >
           Bekijk meer werk
         </Link>
       </div>
-      <div className="relative mt-8 flex overflow-hidden">
-        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {casesContent.map((caseItem, index) => (
-            <CaseItem
-              key={index}
-              title={caseItem.title}
-              description={caseItem.description}
-              image={caseItem.image}
-            />
-          ))}
+      <div
+        id="succes-verhalen"
+        className="mt-12 no-scrollbar overflow-x-scroll"
+      >
+        <div className="container">
+          <div className="flex gap-4 w-[233%]">
+            {SuccesVerhalen.sort(() => Math.random() - 0.5).map(
+              (succesVerhaal, index) => (
+                <CaseItem
+                  key={index}
+                  title={succesVerhaal.title}
+                  description={succesVerhaal.subtitle}
+                  image={succesVerhaal.photo}
+                  link={`/succesverhalen/${succesVerhaal.slug}`}
+                />
+              )
+            )}
+          </div>
         </div>
-        <div className="bg-gray-200 h-48"></div>
+      </div>
+      <div className=" container flex gap-4">
+        <button className="h-8 w-8 m-4" onClick={scrollLeft}>
+          <Image
+            src="/images/pijl.svg"
+            width={16}
+            height={16}
+            alt="previous"
+            className="transform rotate-[135deg]"
+          />
+        </button>
+        <button className="h-8 w-8 m-4" onClick={scrollRight}>
+          <Image
+            src="/images/pijl.svg"
+            width={16}
+            height={16}
+            alt="next"
+            className="transform -rotate-45"
+          />
+        </button>
       </div>
     </section>
   );
-};
-
-export default Cases;
+}

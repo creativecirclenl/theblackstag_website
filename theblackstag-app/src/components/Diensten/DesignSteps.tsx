@@ -23,11 +23,12 @@ const DesignSteps: React.FC<DesignStepsProps> = ({ content }) => {
             <Accordion content={content.steps} />
           </div>
         </div>
-        <div className="md:absolute top-0 right-0 md:w-1/2 h-[800px]">
+        <div className="md:absolute top-0 right-0 md:w-1/2 h-[800px] overflow-hidden">
           <Image
             src="/images/logo-restyling-lindi.png"
             alt="restyle lindi"
             fill
+            className="object-cover"
           />
         </div>
       </div>

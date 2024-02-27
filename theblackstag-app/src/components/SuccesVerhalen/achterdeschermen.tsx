@@ -23,10 +23,9 @@ export default function AchterDeSchermen({
       <div className="md:w-3/4">
         <Image
           src={content.achterdeschermen.image}
-          width={690}
-          height={1040}
+          fill
           alt={content.achterdeschermen.title}
-          className="w-full h-full object-cover -z-10"
+          className="object-cover -z-10"
         />
       </div>
     </section>
