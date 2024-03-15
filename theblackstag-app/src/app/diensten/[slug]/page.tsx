@@ -34,7 +34,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             subtitle: "",
             description: "",
             colors: "from-tbsyellow to-tbsred",
-            size: "w-fit h-fit py-4 md:w-1/2 text-7xl md:text-[100px]",
+            size: "w-fit h-fit py-4 md:w-2/3 text-7xl md:text-[100px]",
             subsize: "text-lg md:text-[67px]",
           }
         : slug === "promotie-uitingen"
@@ -43,7 +43,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             subtitle: "",
             description: "",
             colors: "from-tbsyellow to-tbsred",
-            size: "w-fit md:w-1/2 text-7xl md:text-[166.5px]",
+            size: "w-fit md:w-2/3 text-7xl md:text-[150px]",
             subsize: "text-lg md:text-[67px]",
           }
         : slug === "foto-videografie"

@@ -6,7 +6,7 @@ interface DienstenTableProps {
     diensten: {
       title: string;
       slug: string;
-      description: string;
+      description: string | JSX.Element;
     }[];
   };
 }
@@ -31,7 +31,9 @@ const DienstenTable: React.FC<DienstenTableProps> = ({ content }) => {
                 </Link>
               </div>
             </div>
-            <p className="md:w-2/3 ">{dienst.description}</p>
+            <p className="md:w-2/3 flex flex-col gap-4 ">
+              {dienst.description}
+            </p>
           </div>
         ))}
       </div>

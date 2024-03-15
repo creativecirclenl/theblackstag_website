@@ -7,7 +7,7 @@ export default function SuccesVerhalenPage() {
       title: "Succes-verhalen",
       subtitle: "van idee tot uitvoering",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mauris dui, commodo vitae magna posuere, egestas aliquet dui. Morbi quis neque sit amet purus consequat cursus nec vitae arcu. Mauris nec erat dolor.",
+        "Hieronder vind je een aantal succesverhalen waar ik trots op ben. Elk project, groot of klein, verdient tijd en aandacht om tot een fantastisch eindresultaat te komen. Ben je benieuwd naar de mogelijkheden? Neem dan snel contact op.",
       colors: "from-tbspurple to-tbsred",
       size: "w-fit md:w-1/2 text-7xl md:text-[125px]",
       subsize: "text-lg md:w-1/2 md:text-[50px] lg:pr-24",
@@ -27,7 +27,7 @@ export default function SuccesVerhalenPage() {
         slug: "casper",
         photo: "/images/casper1.webp",
         subtitle: "Een persoonlijk en uniek kaartje",
-        hashtags: ["#geboortekaartje", "#ontwerp", "#signing"],
+        hashtags: ["#geboortekaartje", "#ontwerp", "#drukwerk"],
       },
       {
         type: "Trouwkaarten",
@@ -35,7 +35,7 @@ export default function SuccesVerhalenPage() {
         slug: "anna-wesley",
         photo: "/images/anna-wesley1.webp",
         subtitle: "Een kaartje in meerdere talen voor de hele familie.",
-        hashtags: ["#trouwkaarten", "#ontwerp", "#signing"],
+        hashtags: ["#trouwkaarten", "#ontwerp", "#kaartjeopmaat"],
       },
       {
         type: "Rebranding",
@@ -43,7 +43,7 @@ export default function SuccesVerhalenPage() {
         slug: "femur-beheer",
         photo: "/images/femur-beheer1.webp",
         subtitle: "VvE saai? Nee juist helemaal hip!",
-        hashtags: ["#rebranding", "#signing", "#huisstijl"],
+        hashtags: ["#rebranding", "#baniervlaggen", "#huisstijl"],
       },
       {
         type: "Rebranding",
@@ -51,7 +51,7 @@ export default function SuccesVerhalenPage() {
         slug: "lindi",
         photo: "/images/lindi1.webp",
         subtitle: "Ontwikkelingspsycholoog en Speltherapeut",
-        hashtags: ["#HUISSTIJL", "#ONTWERP", "#SIGNING"],
+        hashtags: ["#HUISSTIJL", "#ONTWERP", "#drukwerk"],
       },
       {
         type: "Kookboek",
@@ -59,7 +59,7 @@ export default function SuccesVerhalenPage() {
         slug: "kookboek-ggd-zhz",
         photo: "/images/kookboek-ggd-zhz1.webp",
         subtitle: "Een kookboek om Nieuw-Lekkerland gezonder te laten eten.",
-        hashtags: ["#kookboek", "#ontwerp", "#signing"],
+        hashtags: ["#kookboek", "#ontwerp", "#fotografie"],
       },
       {
         type: "Huisstijl ontwikkeling",
@@ -68,23 +68,7 @@ export default function SuccesVerhalenPage() {
         photo: "/images/pt-its-personal1.webp",
         subtitle:
           "It's Personal streeft ernaar bij te dragen aan de gezondheid en behoeften van de klant.",
-        hashtags: ["#huisstijl", "#ontwerp", "#signing"],
-      },
-      {
-        type: "Huisstijl",
-        title: "Lorem ipsum dolor",
-        slug: "lorem-ipsum-dolor",
-        photo: "/images/placeholder.svg",
-        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        hashtags: ["#HUISSTIJL", "#ONTWERP", "#SIGNING"],
-      },
-      {
-        type: "Huisstijl",
-        title: "Lorem ipsum dolor",
-        slug: "lorem-ipsum-dolor",
-        photo: "/images/placeholder.svg",
-        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        hashtags: ["#HUISSTIJL", "#ONTWERP", "#SIGNING"],
+        hashtags: ["#huisstijl", "#ontwerp", "#logoontwerp"],
       },
     ],
   };
