@@ -78,7 +78,7 @@ export default function Footer() {
       </div>
       <div className="container flex flex-col md:flex-row justify-between mt-12">
         <div className="w-full flex gap-4 md:flex-col md:gap-0 md:w-1/2">
-          <Logo color={false} />
+          <Logo color={true} />
           <div className="flex gap-4 pt-4">
             <a
               href="https://www.instagram.com/theblackstagvormgeving/"
