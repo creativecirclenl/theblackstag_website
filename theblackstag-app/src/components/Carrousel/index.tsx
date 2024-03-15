@@ -23,18 +23,17 @@ const Carrousel: React.FC = () => {
   }, [logos]);
 
   return (
-    <section className="overflow-hidden my-12 h-40">
+    <section className="overflow-hidden my-12">
       <div className="flex items-center justify-center w-[300%] md:w-full">
         {logos.map((logo, index) => (
           <div
             key={index}
-            className="w-1/2 p-2 md:w-1/6 md:p-4 even:md:border-x md:border-gray-300"
+            className="relative h-40 w-1/2 md:w-1/6 even:md:border-x md:border-gray-300"
           >
             <Image
               src={logo}
-              width={100}
-              height={100}
-              className="mx-auto h-24"
+              fill
+              className="object-contain"
               alt="Client Logo"
             />
           </div>
