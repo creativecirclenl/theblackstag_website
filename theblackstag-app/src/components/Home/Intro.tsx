@@ -13,7 +13,7 @@ export default function Intro({
   return (
     <section className="container flex flex-col items-start justify-center pt-12 mb-8">
       <h2
-        className={`${content.size} leading-normal bg-gradient-to-r ${content.colors} bg-clip-text text-transparent font-bold`}
+        className={`${content.size} leading-[1.1] bg-gradient-to-r ${content.colors} bg-clip-text text-transparent font-bold`}
       >
         {content.title}
       </h2>
