@@ -95,7 +95,7 @@ export default function SuccessStoryPage({
         title: "",
         description: "",
         image: "",
-        video: "/videos/anne_en_wesley.mp4",
+        video: "/videos/anne-en-wesley.mp4",
       },
     },
     {
