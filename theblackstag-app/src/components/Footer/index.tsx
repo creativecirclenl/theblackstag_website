@@ -129,7 +129,7 @@ export default function Footer() {
               <li key={index}>
                 <Link
                   href={`/diensten${service.link}`}
-                  className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-tbsgreen"
+                  className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
                 >
                   {service.name}
                 </Link>

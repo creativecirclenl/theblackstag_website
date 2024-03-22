@@ -1,16 +1,16 @@
 import Accordion from "@/components/Accordion";
-import restyleLindi from "@/../public/images/logo-restyling-lindi.png";
 import Image from "next/image";
 
-interface DesignStepsProps {
+type DesignStepsProps = {
   content: {
     title: string;
     subtitle: string;
+    image: string;
     steps: { title: string; description: string }[];
   };
-}
+};
 
-const DesignSteps: React.FC<DesignStepsProps> = ({ content }) => {
+export default function DesignSteps({ content }: DesignStepsProps) {
   return (
     <section className="relative mt-16">
       <div className="container flex flex-col md:flex-row">
@@ -25,8 +25,8 @@ const DesignSteps: React.FC<DesignStepsProps> = ({ content }) => {
         </div>
         <div className="md:absolute top-0 right-0 md:w-1/2 h-[800px] overflow-hidden">
           <Image
-            src="/images/logo-restyling-lindi.png"
-            alt="restyle lindi"
+            src={content.image}
+            alt={content.title}
             fill
             className="object-cover"
           />
@@ -34,6 +34,4 @@ const DesignSteps: React.FC<DesignStepsProps> = ({ content }) => {
       </div>
     </section>
   );
-};
-
-export default DesignSteps;
+}

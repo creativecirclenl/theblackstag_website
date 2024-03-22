@@ -2,6 +2,7 @@ import Cases from "@/components/Home/Cases";
 import AchterDeSchermen from "@/components/SuccesVerhalen/achterdeschermen";
 import Intro from "@/components/SuccesVerhalen/intro";
 import Slider from "@/components/SuccesVerhalen/slider";
+import Video from "@/components/Video";
 
 export function generateStaticParams() {
   return [
@@ -94,6 +95,7 @@ export default function SuccessStoryPage({
         title: "",
         description: "",
         image: "",
+        video: "/videos/anne_en_wesley.mp4",
       },
     },
     {
@@ -201,6 +203,9 @@ export default function SuccessStoryPage({
       <Intro content={content} slug={slug} />
       <Slider slider={content.slider} />
       {content.achterdeschermen.title && <AchterDeSchermen content={content} />}
+      {content.achterdeschermen.video && (
+        <Video video={content.achterdeschermen.video} />
+      )}
       <Cases />
     </main>
   );

@@ -13,6 +13,8 @@
 /.next/
 /out/
 
+*.mp4
+
 # production
 /build
 

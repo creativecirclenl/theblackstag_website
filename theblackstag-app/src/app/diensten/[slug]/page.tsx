@@ -215,24 +215,36 @@ export default function Page({ params }: { params: { slug: string } }) {
     designsteps: {
       title: "Hoe werkt The Black Stag?",
       subtitle: "Het ontwerpproces in vier stappen",
+      image:
+        slug === "visuele-identiteit"
+          ? "/images/visuele-identiteit.webp"
+          : slug === "kaarten-en-uitnodigingen"
+          ? "/images/kaarten-en-uitnodigingen.webp"
+          : slug === "promotie-uitingen"
+          ? "/images/promotie-uitingen.webp"
+          : slug === "foto-videografie"
+          ? "/images/foto-videografie.webp"
+          : slug === "hulp-op-de-werkvloer"
+          ? "/images/hulp-op-de-werkvloer.webp"
+          : "/images/main-service.webp",
       steps: [
         {
-          title: "01.	Afspraak (op locatie of online)",
+          title: "01. Afspraak (op locatie of online)",
           description:
             "Samen gaan we kijken naar de mogelijkheden voor jullie kaart. Welk type papier en envelop hebben jullie in gedachten? Een fysieke afspraak biedt de mogelijkheid om verschillende papier- en envelopsoorten te bekijken en te voelen, zodat jullie het materiaal kunnen ervaren.",
         },
         {
-          title: "02.	Eerste ontwerpfase",
+          title: "02. Eerste ontwerpfase",
           description:
             "Na onze bespreking van jullie wensen, ga ik aan de slag met drie verschillende ontwerpen. Jullie kunnen een van deze ontwerpen kiezen, of we kunnen elementen van alle drie de kaarten combineren tot een nieuw ontwerp.",
         },
         {
-          title: "03.	Definitief ontwerp",
+          title: "03. Definitief ontwerp",
           description:
             "Zodra het ontwerp volledig naar wens is, maken we de kaart definitief. Jullie leveren de juiste teksten en gegevens aan, en we werken het ontwerp tot in de puntjes uit. Jullie moeten natuurlijk wel 100% tevreden zijn met het resultaat.",
         },
         {
-          title: "04.	Betaling en productie",
+          title: "04. Betaling en productie",
           description:
             "Na goedkeuring van het definitieve ontwerp volgt de betaling. Zodra de betaling is voldaan, start de productie van de kaarten. Trouwkaarten worden doorgaans binnen 5 tot 8 werkdagen gedrukt, en geboortekaarten kunnen in de meeste gevallen binnen 24 uur worden geleverd!",
         },

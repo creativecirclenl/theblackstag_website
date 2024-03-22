@@ -58,6 +58,7 @@ export default function DienstenPage() {
     designsteps: {
       title: "Hoe werkt The Black Stag?",
       subtitle: "Het ontwerpproces in vier stappen",
+      image: "/images/main-service.webp",
       steps: [
         {
           title: "01.	Intake",
