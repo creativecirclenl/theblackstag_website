@@ -93,5 +93,3 @@ export default function DienstenPage() {
     </main>
   );
 }
-
-DienstenPage;

@@ -30,7 +30,7 @@ const Team = () => {
     {
       name: "Katja van de Ven",
       role: "Administratie",
-      hashtags: "#administratie #administratie #administratie",
+      hashtags: "#administratie #cijfers",
       image: "/images/team-administratie.webp",
     },
     {

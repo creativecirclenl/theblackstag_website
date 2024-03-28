@@ -25,13 +25,13 @@ const footerContent = {
     { name: "Hulp op de werkvloer", link: "/hulp-op-de-werkvloer" },
   ],
   successStories: [
-    { name: "Hulp op de werkvloer", link: "/hulp-op-de-werkvloer" },
-    { name: "Rebranding", link: "/rebranding" },
-    { name: "Een persoonlijk kaartje", link: "/een-persoonlijk-kaartje" },
+    { name: "Hulp op de werkvloer", link: "/" },
+    { name: "Rebranding", link: "/fortune-factory" },
+    { name: "Een persoonlijk kaartje", link: "/casper" },
   ],
   footerLinks: [
     { name: "Privacy", link: "/privacy" },
-    { name: "Cookies", link: "/cookies" },
+    { name: "Cookies", link: "/privacy" },
   ],
 };
 
@@ -143,7 +143,7 @@ export default function Footer() {
             {footerContent.successStories.map((story, index) => (
               <li key={index}>
                 <Link
-                  href={`/cases${story.link}`}
+                  href={`/succesverhalen${story.link}`}
                   className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
                 >
                   {story.name}
