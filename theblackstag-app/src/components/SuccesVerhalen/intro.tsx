@@ -7,10 +7,10 @@ const Intro = ({ content, slug }: { content: any; slug: any }) => {
         <div className="md:w-1/2 overflow-hidden my-8">
           <Image
             src={content?.image || "/images/placeholder.svg"}
-            height={1348}
-            width={1600}
+            height={750}
+            width={900}
             alt={slug}
-            className="relative -z-10 md:h-full md:w-auto md:max-w-none md:-ms-32 object-cover"
+            className="relative -z-10 h-full"
           />
         </div>
         <div className="md:w-1/2 h-full flex flex-col justify-around md:float-end">
