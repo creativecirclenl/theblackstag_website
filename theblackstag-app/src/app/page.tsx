@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <main>
       <Intro content={content.Intro} />
-      <Foto />
+      {/* <Foto /> */}
       <Diensten />
       <PromoTekst />
       <Klanten />

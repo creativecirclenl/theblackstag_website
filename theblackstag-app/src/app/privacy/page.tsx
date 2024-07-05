@@ -10,13 +10,13 @@ export default function Page() {
         van onze sites dan ook om ons Privacybeleid regelmatig door te nemen.
       </p>
       <p className="text-sm mb-2">
-        The Black Stag, gevestigd aan Dwarsstraat 1, 3361 EC Sliedrecht, is
+        The Black Stag, gevestigd aan De Baan 2, 2952 AC Alblasserdam, is
         verantwoordelijk voor de verwerking van persoonsgegevens zoals
         weergegeven in deze privacyverklaring.
       </p>
       <h2 className="text-xl font-semibold mb-2 mt-4">Contactgegevens:</h2>
       <p className="text-sm mb-2">
-        www.theblackstag.nl Dwarsstraat 1, 3361EC Sliedrecht 0615202440
+        www.theblackstag.nl De Baan 2, 2952 AC Alblasserdam 0615202440
       </p>
       <p className="text-sm mb-2">
         Katja van de Ven is de Functionaris Gegevensbescherming van The Black

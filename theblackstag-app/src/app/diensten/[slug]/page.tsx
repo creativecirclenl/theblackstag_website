@@ -3,6 +3,7 @@ import DienstenTable from "@/components/Diensten/DienstenTable";
 import IntroText from "@/components/Diensten/IntroText";
 import Cases from "@/components/Home/Cases";
 import Intro from "@/components/Home/Intro";
+import Link from "next/link";
 
 export function generateStaticParams() {
   return [
@@ -254,6 +255,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   return (
     <main>
       <Intro content={content.Intro} />
+      <div className="container"><Link className={`leading-[1.1] bg-gradient-to-r ${content.Intro.colors} bg-clip-text text-transparent font-bold`} href="/diensten">Diensten</Link> / {content.Intro.title}</div>
       <IntroText content={content.IntroText} />
       <DienstenTable content={content.dienstentable} />
       <DesignSteps content={content.designsteps} />

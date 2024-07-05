@@ -14,8 +14,8 @@ const footerContent = {
   phoneNumber: "06 15 202 440",
   address: {
     title: "The Black Stag",
-    street: "Dwarsstraat 1",
-    city: "3361 EC Sliedrecht",
+    street: "De Baan 2",
+    city: "2952 AC Alblasserdam",
   },
   services: [
     { name: "Visuele identiteit", link: "/visuele-identiteit" },
