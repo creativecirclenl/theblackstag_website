@@ -6,7 +6,7 @@ export default function Diensten() {
     title: "The Black Stag Maakt",
     subtitle: "Frisse en creatieve ontwerpoplossingen",
     description:
-      "Het team van experts zal de volledige ontwikkelingscyclus van je product/ of dienst afhandelen, van idee tot uitwerking.",
+      "Ons team van experts begeleid je van eerste idee tot eindproduct — volledig en persoonlijk.",
     linktext: "Ontdek meer",
     link: "/diensten",
   };
@@ -33,7 +33,7 @@ export default function Diensten() {
       image: "/images/hulp-op-de-werkvloer.svg",
       title: "Hulp op de werkvloer",
       description:
-        "Gaat je collega met zwangerschapsverlof of heeft je hardwerkende DTP’er besloten die wereldreis te gaan maken? Dan is The Black Stag je nieuwe tijdelijke collega.",
+        "Is je collega met verlof of vertrekt je DTP’er op wereldreis? Geen zorgen — The Black Stag staat klaar als jouw tijdelijke collega.",
     },
   ];
   return (

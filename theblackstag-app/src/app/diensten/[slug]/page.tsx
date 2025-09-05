@@ -79,7 +79,7 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
             title: "Altijd een persoonlijk kaartje",
             paragraphs: [
               "Het ontvangen van een kaartje is leuk, maar het ontwerpen en versturen van je eigen unieke kaart is natuurlijk nog veel leuker!",
-              "Niet kiezen uit standaard ontwerpen maar altijd 100% een eigen unieke kaart. Persoonlijkheid staat bij The Black Stag centraal. Bij het creëren van jullie kaart kijken we verder dan alleen een leuk ontwerp. Samen kijken we naar de vorm en formaat van jullie kaart, papiersoorten en natuurlijk niet te vergeten de envelop. Daarnaast kunnen kaarten nog extra opgefleurd worden met bijvoorbeeld een lintje, tag of bijpassende sluitzegel. Benieuwd geworden naar de mogelijkheden? Maak dan snel, vrijblijvend een afspraak voor een oriëntatiegesprek.",
+              "Niet kiezen uit standaard ontwerpen maar altijd 100% een eigen unieke kaart. Persoonlijkheid staat bij The Black Stag centraal. Bij het ontwerpen van jullie kaart kijken we verder dan alleen het uiterlijk — we denken mee over papier, vorm én de envelop. Daarnaast kunnen kaarten nog extra opgefleurd worden met bijvoorbeeld een lintje, tag of bijpassende sluitzegel. Benieuwd geworden naar de mogelijkheden? Maak dan snel, vrijblijvend een afspraak voor een oriëntatiegesprek.",
             ],
           }
         : slug === "promotie-uitingen"
@@ -143,13 +143,13 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
             diensten: [
               {
                 title: "Geboortekaarten",
-                slug: "",
+                slug: `${slug}/geboortekaarten`,
                 description:
                   "De eerste keer lachen, de eerste stapjes, de eerste keer papa en mama. Al deze eerste momenten zijn bijzonder. Dus ook de eerste kennismaking verdient een speciaal geboortekaartje. The Black Stag ontwerpt geboortekaartjes op maat. Een mooi aandenken voor later, een bijzondere herinnering om te bewaren en te delen met jullie dierbaren. Omdat de papiersoort een grote rol speelt in het uiteindelijke resultaat van jullie geboortekaartje kunnen jullie kiezen uit verschillende papiersoorten. En met enveloppen in meer dan 65 kleuren en in meer dan 33 formaten is The Black Stag het adres voor kwaliteitsenveloppen. Ik help jullie graag bij het creëren van een uniek, spetterende en persoonlijke geboortekaart.",
               },
               {
                 title: "Trouwkaarten",
-                slug: "",
+                slug: `${slug}/trouwkaarten`,
                 description:
                   "De voorpret van jullie bruiloft begint met het ontwerpen en versturen van de trouwkaarten. Maak jullie bruiloft bekend op een wijze die volledig aansluit op jullie persoonlijkheid. The Black Stag ontwerp trouwkaarten op maat, elk kaartje is uniek. Houden jullie het klein met een enkel kaartje of pakken jullie het groots aan met een complete trouwhuisstijl? Van Save the date kaarten tot aan de menukaarten die op tafel liggen. Mag het wat meer zijn? Geen probleem! Niks is te veel bij The Black Stag. Alle kaarten zijn extra op te fleuren met bijvoorbeeld lint, jute, tags of een bijpassende sluitzegel.",
               },
@@ -256,7 +256,7 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
   return (
     <main>
       <Intro content={content.Intro} />
-      <div className="container"><Link className={`leading-[1.1] bg-gradient-to-r ${content.Intro.colors} bg-clip-text text-transparent font-bold`} href="/diensten">Diensten</Link> / {content.Intro.title}</div>
+      <div className="container"><Link className={`leading-[1.1] bg-gradient-to-r ${content.Intro.colors} bg-clip-text text-transparent font-bold`} href="/diensten">Diensten</Link> / {slug.replace(/-/g, ' ')}</div>
       <IntroText content={content.IntroText} />
       <DienstenTable content={content.dienstentable} />
       <DesignSteps content={content.designsteps} />
