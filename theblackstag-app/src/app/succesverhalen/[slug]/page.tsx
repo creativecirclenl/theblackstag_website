@@ -16,11 +16,12 @@ export function generateStaticParams() {
   ];
 }
 
-export default function SuccessStoryPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function SuccessStoryPage(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
   const { slug } = params;
   const content = [
     {
