@@ -6,7 +6,7 @@ interface DienstenTableProps {
     diensten: {
       title: string;
       slug: string;
-      description: string | JSX.Element;
+      description: string | React.ReactNode;
     }[];
   };
 }
@@ -25,14 +25,14 @@ const DienstenTable: React.FC<DienstenTableProps> = ({ content }) => {
               <div className="max-w-xs">
                 { dienst.slug === "" ?
                 <span
-                  className=" cursor-pointer w-fit max-w-xs font-medium text-3xl border-b leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
+                  className=" cursor-pointer w-fit max-w-xs font-medium text-3xl border-b leading-relaxed hover:bg-linear-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
                 >
                   {dienst.title}
                 </span>
                 :
                 <Link
                   href={`/diensten/${dienst.slug ? dienst.slug : ""}`}
-                  className="w-fit max-w-xs font-medium text-3xl border-b leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
+                  className="w-fit max-w-xs font-medium text-3xl border-b leading-relaxed hover:bg-linear-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
                 >
                   {dienst.title}
                 </Link>}

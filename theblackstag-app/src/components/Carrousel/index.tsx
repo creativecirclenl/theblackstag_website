@@ -28,7 +28,7 @@ const Carrousel: React.FC = () => {
         {logos.map((logo, index) => (
           <div
             key={index}
-            className="relative h-40 w-1/2 md:w-1/6 even:md:border-x md:border-gray-300"
+            className="relative h-40 w-1/2 md:w-1/6 md:even:border-x md:border-gray-300"
           >
             <Image
               src={logo}

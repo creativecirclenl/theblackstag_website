@@ -14,7 +14,7 @@ export default function AchterDeSchermen({
     <section className="container md:my-24 md:flex">
       <div className="md:w-1/4 flex flex-col justify-end md:h-[800px] ">
         <h2
-          className={`relative md:w-[200%] block text-xl md:text-8xl font-bold md:mb-4 bg-gradient-to-r ${content.colors} bg-clip-text text-transparent`}
+          className={`relative md:w-[200%] block text-xl md:text-8xl font-bold md:mb-4 bg-linear-to-r ${content.colors} bg-clip-text text-transparent`}
         >
           {content.achterdeschermen.title}
         </h2>

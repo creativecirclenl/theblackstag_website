@@ -1,17 +1,51 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer utilities {
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@theme {
+  --color-tbsblue: #68beec;
+  --color-tbsgreen: #388379;
+  --color-tbsorange: #ee774f;
+  --color-tbsred: #e61a60;
+  --color-tbspurple: #a6226f;
+  --color-tbsyellow: #fac743;
+  --color-tbsgray: #4a4a49;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility no-scrollbar {
   /* Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     display: none;
   }
-
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* :root {
@@ -38,7 +72,7 @@ body {
     rgb(var(--background-start-rgb));
 }
 .promotekst a {
-  @apply border-b leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0;
+  @apply border-b leading-relaxed hover:bg-linear-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0;
 }
 .slider p {
   @apply mb-4;

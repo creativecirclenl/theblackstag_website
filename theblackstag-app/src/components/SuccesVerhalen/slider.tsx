@@ -67,7 +67,7 @@ export default function Slider({
                     width={16}
                     height={16}
                     alt="previous"
-                    className="transform rotate-[135deg]"
+                    className="transform rotate-135"
                   />
                 </button>
                 <button className="h-8 w-8 m-4" onClick={nextSlide}>

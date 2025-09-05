@@ -19,7 +19,7 @@ const Intro = ({ content, slug }: { content: any; slug: any }) => {
               {content?.type}
             </h3>
             <h2
-              className={`w-fit text-6xl md:text-9xl leading-none bg-gradient-to-r ${content?.colors} bg-clip-text text-transparent font-bold md:ps-12 md:-ms-32 uppercase`}
+              className={`w-fit text-6xl md:text-9xl leading-none bg-linear-to-r ${content?.colors} bg-clip-text text-transparent font-bold md:ps-12 md:-ms-32 uppercase`}
             >
               {content?.title}
             </h2>

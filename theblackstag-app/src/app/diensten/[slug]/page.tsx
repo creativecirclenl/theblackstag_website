@@ -256,7 +256,7 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
   return (
     <main>
       <Intro content={content.Intro} />
-      <div className="container"><Link className={`leading-[1.1] bg-gradient-to-r ${content.Intro.colors} bg-clip-text text-transparent font-bold`} href="/diensten">Diensten</Link> / {slug.replace(/-/g, ' ')}</div>
+      <div className="container"><Link className={`leading-[1.1] bg-linear-to-r ${content.Intro.colors} bg-clip-text text-transparent font-bold`} href="/diensten">Diensten</Link> / {slug.replace(/-/g, ' ')}</div>
       <IntroText content={content.IntroText} />
       <DienstenTable content={content.dienstentable} />
       <DesignSteps content={content.designsteps} />

@@ -51,7 +51,7 @@ export default function Diensten() {
           </p>
           <Link
             href={dienstenIntro.link}
-            className="border-b leading-relaxed hover:bg-gradient-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
+            className="border-b leading-relaxed hover:bg-linear-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
           >
             {dienstenIntro.linktext}
           </Link>

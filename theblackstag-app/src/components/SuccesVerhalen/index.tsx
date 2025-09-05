@@ -21,7 +21,7 @@ export default function SuccesVerhalen({
         <React.Fragment key={index}>
           <div className="group flex flex-col justify-between">
             <Link href={`/succesverhalen/${succesverhaal.slug}`}>
-              <div className="relative flex flex-col justify-between bg-gradient-to-b from-tbspurple to-tbsred h-[480px] overflow-hidden">
+              <div className="relative flex flex-col justify-between bg-linear-to-b from-tbspurple to-tbsred h-[480px] overflow-hidden">
                 <Image
                   className="group-hover:opacity-15 transition-opacity duration-500 ease-in-out object-cover"
                   src={succesverhaal.photo}
@@ -54,7 +54,7 @@ export default function SuccesVerhalen({
           </div>
           {index === 3 && (
             <div className="col-span-2 my-12">
-              <h3 className="w-fit md:w-1/2 text-5xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-none bg-gradient-to-r from-tbspurple to-tbsred bg-clip-text text-transparent font-bold">
+              <h3 className="w-fit md:w-1/2 text-5xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-none bg-linear-to-r from-tbspurple to-tbsred bg-clip-text text-transparent font-bold">
                 Laten we samenwerken
               </h3>
             </div>
