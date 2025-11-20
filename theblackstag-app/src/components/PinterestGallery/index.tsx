@@ -33,15 +33,20 @@ const PinterestGallery: React.FC<PinterestGalleryProps> = ({ boardUrl, title }) 
   }, []);
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+    <section className="my-12">
       <div className="container">
         {title && (
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-            {title}
-          </h2>
+          <div className="mb-8">
+            <h3 className="text-tbsyellow uppercase text-lg mb-2 md:text-xl">
+              Inspiratie
+            </h3>
+            <h4 className="text-2xl md:text-4xl">
+              {title}
+            </h4>
+          </div>
         )}
 
-        <div ref={containerRef} className="flex flex-col items-center">
+        <div ref={containerRef} className="mb-8">
           {/* Pinterest Board Widget */}
           <a
             data-pin-do="embedBoard"
@@ -54,12 +59,12 @@ const PinterestGallery: React.FC<PinterestGalleryProps> = ({ boardUrl, title }) 
           
           {/* Fallback link for when JavaScript is disabled or widget fails to load */}
           <noscript>
-            <div className="text-center py-8">
+            <div className="py-8">
               <a
                 href={boardUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-gradient-to-r from-tbsorange to-tbsyellow text-white font-semibold rounded-lg hover:shadow-lg transition focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
+                className="border-b leading-relaxed hover:bg-linear-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
               >
                 Bekijk op Pinterest →
               </a>
@@ -67,12 +72,12 @@ const PinterestGallery: React.FC<PinterestGalleryProps> = ({ boardUrl, title }) 
           </noscript>
         </div>
 
-        <div className="text-center mt-8">
+        <div>
           <a
             href={boardUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-gradient-to-r from-tbsorange to-tbsyellow text-white font-semibold rounded-lg hover:shadow-lg transition focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
+            className="border-b leading-relaxed hover:bg-linear-to-t hover:from-50% hover:to-50% hover:from-tbsgreen hover:border-b-0"
           >
             Meer ideeën op Pinterest →
           </a>
