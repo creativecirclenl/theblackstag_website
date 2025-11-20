@@ -46,15 +46,15 @@ const PinterestGallery: React.FC<PinterestGalleryProps> = ({ boardUrl, title }) 
           </div>
         )}
 
-        <div ref={containerRef} className="mb-8">
+        <div ref={containerRef} className="mb-8 flex justify-left">
           {/* Pinterest Board Widget */}
           <a
             data-pin-do="embedBoard"
-            data-pin-board-width="100%"
-            data-pin-scale-height="600"
-            data-pin-scale-width="80"
+            data-pin-board-width="800"
+            data-pin-scale-height="400"
+            data-pin-scale-width="400"
             href={boardUrl}
-            className="block w-full"
+            className="block"
           />
           
           {/* Fallback link for when JavaScript is disabled or widget fails to load */}
