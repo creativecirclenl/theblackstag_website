@@ -1,5 +1,6 @@
 import IntroText from "@/components/Diensten/IntroText";
 import Intro from "@/components/Home/Intro";
+import PinterestGallery from "@/components/PinterestGallery";
 import Link from "next/link";
 
 export function generateStaticParams() {
@@ -65,6 +66,18 @@ export default async function Page(props: { params: Promise<{ slug: string, subs
       <Intro content={content.Intro} />
       <div className="container"><Link className={`leading-[1.1] bg-linear-to-r ${content.Intro.colors} bg-clip-text text-transparent font-bold`} href="/diensten">Diensten</Link> / <Link className={`leading-[1.1] bg-linear-to-r ${content.Intro.colors} bg-clip-text text-transparent font-bold`} href={`/diensten/${slug}`}>{slug.replace(/-/g, ' ')}</Link> / {subslug.replace(/-/g, ' ')}</div>
       <IntroText content={content.IntroText} />
+      {subslug === "geboortekaarten" && (
+        <PinterestGallery 
+          boardUrl="https://www.pinterest.com/theblackstagvormgeving/geboortekaarten/" 
+          title="Geïnspireerd door onze geboortekaarten" 
+        />
+      )}
+      {subslug === "trouwkaarten" && (
+        <PinterestGallery 
+          boardUrl="https://www.pinterest.com/theblackstagvormgeving/trouwkaarten/" 
+          title="Geïnspireerd door onze trouwkaarten" 
+        />
+      )}
     </main>
   );
 }
