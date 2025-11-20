@@ -74,7 +74,7 @@ export default async function Page(props: { params: Promise<{ slug: string, subs
       )}
       {subslug === "trouwkaarten" && (
         <PinterestGallery 
-          boardUrl="https://www.pinterest.com/theblackstagvormgeving/trouwkaarten" 
+          boardUrl="https://www.pinterest.com/theblackstagvormgeving/trouwkaarten/" 
           title="Geïnspireerd door onze trouwkaarten" 
         />
       )}
