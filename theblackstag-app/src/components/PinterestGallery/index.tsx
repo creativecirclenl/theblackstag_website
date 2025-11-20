@@ -1,143 +1,36 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import React, { useEffect, useRef } from "react";
 
 interface PinterestGalleryProps {
   boardUrl: string;
   title?: string;
 }
 
-interface PinterestPin {
-  id: string;
-  url: string;
-  title: string;
-}
-
+/**
+ * PinterestGallery component displays a Pinterest board using Pinterest's embed widget.
+ * 
+ * This component uses Pinterest's official board widget to display pins without requiring
+ * API authentication or dealing with CORS issues. The widget is loaded dynamically and
+ * renders the board content directly from Pinterest.
+ */
 const PinterestGallery: React.FC<PinterestGalleryProps> = ({ boardUrl, title }) => {
-  const [pins, setPins] = useState<PinterestPin[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const fetchPinterestPins = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-
-        // Extract board name from Pinterest URL
-        // Format: https://www.pinterest.com/username/boardname/
-        const boardNameMatch = boardUrl.match(
-          /pinterest\.com\/[^\/]+\/([^\/]+)/
-        );
-
-        if (!boardNameMatch) {
-          throw new Error("Invalid Pinterest URL format");
-        }
-
-        const boardName = boardNameMatch[1];
-
-        // Use Pinterest's oembed API to get board data
-        const response = await fetch(
-          `https://api.pinterest.com/v1/urls/?url=${encodeURIComponent(
-            boardUrl
-          )}&fields=media,description`
-        );
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch Pinterest data");
-        }
-
-        // Alternative: Use Smmry's Pinterest API (publicly available)
-        const pinterestResponse = await fetch(
-          `https://pin.it/api/v2/board/${boardName}/pins`
-        );
-
-        // Fallback: Create placeholder gallery based on common card templates
-        const placeholderPins: PinterestPin[] = [
-          {
-            id: "1",
-            url: "/images/placeholder-card-1.png",
-            title: "Kaart Design 1",
-          },
-          {
-            id: "2",
-            url: "/images/placeholder-card-2.png",
-            title: "Kaart Design 2",
-          },
-          {
-            id: "3",
-            url: "/images/placeholder-card-3.png",
-            title: "Kaart Design 3",
-          },
-          {
-            id: "4",
-            url: "/images/placeholder-card-4.png",
-            title: "Kaart Design 4",
-          },
-        ];
-
-        setPins(placeholderPins);
-        setLoading(false);
-      } catch (err) {
-        console.error("Error fetching Pinterest pins:", err);
-        setError(
-          "Kon Pinterest-afbeeldingen niet laden. Probeer het later opnieuw."
-        );
-        setLoading(false);
+    // Load Pinterest's widget script if not already loaded
+    if (!document.querySelector('script[src*="pinit.js"]')) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.defer = true;
+      script.src = 'https://assets.pinterest.com/js/pinit.js';
+      document.body.appendChild(script);
+    } else {
+      // If script is already loaded, trigger a rebuild of widgets
+      if (window.PinUtils) {
+        window.PinUtils.build();
       }
-    };
-
-    if (boardUrl) {
-      fetchPinterestPins();
     }
-  }, [boardUrl]);
-
-  if (loading) {
-    return (
-      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="container">
-          {title && (
-            <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-              {title}
-            </h2>
-          )}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="aspect-square bg-gray-200 rounded-lg animate-pulse"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="container">
-          {title && (
-            <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-              {title}
-            </h2>
-          )}
-          <div className="text-center text-gray-600">
-            <p>{error}</p>
-            <a
-              href={boardUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 px-6 py-3 bg-gradient-to-r from-tbsorange to-tbsyellow text-white rounded-lg hover:shadow-lg transition"
-            >
-              Bekijk op Pinterest
-            </a>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  }, []);
 
   return (
     <section className="py-16 bg-gradient-to-b from-white to-gray-50">
@@ -148,47 +41,54 @@ const PinterestGallery: React.FC<PinterestGalleryProps> = ({ boardUrl, title }) 
           </h2>
         )}
 
-        {pins.length > 0 ? (
-          <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {pins.map((pin) => (
-                <a
-                  key={pin.id}
-                  href={pin.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow"
-                >
-                  <Image
-                    src={pin.url}
-                    alt={pin.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-                </a>
-              ))}
-            </div>
-
-            <div className="text-center">
+        <div ref={containerRef} className="flex flex-col items-center">
+          {/* Pinterest Board Widget */}
+          <a
+            data-pin-do="embedBoard"
+            data-pin-board-width="100%"
+            data-pin-scale-height="600"
+            data-pin-scale-width="80"
+            href={boardUrl}
+            className="block w-full"
+          />
+          
+          {/* Fallback link for when JavaScript is disabled or widget fails to load */}
+          <noscript>
+            <div className="text-center py-8">
               <a
                 href={boardUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-gradient-to-r from-tbsorange to-tbsyellow text-white font-semibold rounded-lg hover:shadow-lg transition"
+                className="inline-block px-8 py-3 bg-gradient-to-r from-tbsorange to-tbsyellow text-white font-semibold rounded-lg hover:shadow-lg transition focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
               >
-                Meer ideeën op Pinterest →
+                Bekijk op Pinterest →
               </a>
             </div>
-          </>
-        ) : (
-          <div className="text-center text-gray-600">
-            <p>Geen afbeeldingen beschikbaar</p>
-          </div>
-        )}
+          </noscript>
+        </div>
+
+        <div className="text-center mt-8">
+          <a
+            href={boardUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-tbsorange to-tbsyellow text-white font-semibold rounded-lg hover:shadow-lg transition focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
+          >
+            Meer ideeën op Pinterest →
+          </a>
+        </div>
       </div>
     </section>
   );
 };
+
+// Extend Window interface for Pinterest's PinUtils
+declare global {
+  interface Window {
+    PinUtils?: {
+      build: () => void;
+    };
+  }
+}
 
 export default PinterestGallery;
