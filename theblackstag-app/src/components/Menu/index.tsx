@@ -12,8 +12,8 @@ const Menu: React.FC<{ toggleMenu: () => void }> = ({ toggleMenu }) => {
     phoneNumber: "06 15 202 440",
     address: {
       title: "The Black Stag",
-      street: "De Baan 2",
-      city: "2952 AC Alblasserdam",
+      street: " Vinkenpolderweg 6",
+      city: "2952 AV Alblasserdam",
     },
     items: [
       {

@@ -1,5 +1,5 @@
 import DienstenTable from "@/components/Diensten/DienstenTable";
-import Intro from "@/components/Home/Intro";
+import Intro from "@/components/Intro";
 import Team from "@/components/Team";
 
 export default function OverPage() {
@@ -69,7 +69,7 @@ export default function OverPage() {
     <main>
       <Intro content={content.Intro} />
       <DienstenTable content={content.Dienstentable} />
-      <Team />
+      {/* <Team /> */}
     </main>
   );
 }

@@ -1,16 +1,15 @@
 import IntroText from "@/components/Diensten/IntroText";
-import Intro from "@/components/Home/Intro";
+import Intro from "@/components/Intro";
 import PinterestGallery from "@/components/PinterestGallery";
 import Link from "next/link";
 
 export function generateStaticParams() {
-  return [
-    { subslug: "geboortekaarten" },
-    { subslug: "trouwkaarten" },
-  ];
+  return [{ subslug: "geboortekaarten" }, { subslug: "trouwkaarten" }];
 }
 
-export default async function Page(props: { params: Promise<{ slug: string, subslug: string }> }) {
+export default async function Page(props: {
+  params: Promise<{ slug: string; subslug: string }>;
+}) {
   const params = await props.params;
   const { slug, subslug } = params;
 
@@ -59,23 +58,38 @@ export default async function Page(props: { params: Promise<{ slug: string, subs
               "Willen jullie samen aan de slag met jullie trouwkaart? Neem contact op voor een vrijblijvend ontwerpgesprek — ik help jullie graag.",
             ],
           },
-        }
-    
+  };
+
   return (
     <main>
       <Intro content={content.Intro} />
-      <div className="container"><Link className={`leading-[1.1] bg-linear-to-r ${content.Intro.colors} bg-clip-text text-transparent font-bold`} href="/diensten">Diensten</Link> / <Link className={`leading-[1.1] bg-linear-to-r ${content.Intro.colors} bg-clip-text text-transparent font-bold`} href={`/diensten/${slug}`}>{slug.replace(/-/g, ' ')}</Link> / {subslug.replace(/-/g, ' ')}</div>
+      <div className="container">
+        <Link
+          className={`leading-[1.1] bg-linear-to-r ${content.Intro.colors} bg-clip-text text-transparent font-bold`}
+          href="/diensten"
+        >
+          Diensten
+        </Link>{" "}
+        /{" "}
+        <Link
+          className={`leading-[1.1] bg-linear-to-r ${content.Intro.colors} bg-clip-text text-transparent font-bold`}
+          href={`/diensten/${slug}`}
+        >
+          {slug.replace(/-/g, " ")}
+        </Link>{" "}
+        / {subslug.replace(/-/g, " ")}
+      </div>
       <IntroText content={content.IntroText} />
       {subslug === "geboortekaarten" && (
-        <PinterestGallery 
-          boardUrl="https://www.pinterest.com/theblackstagvormgeving/geboortekaarten/" 
-          title="Geïnspireerd door onze geboortekaarten" 
+        <PinterestGallery
+          boardUrl="https://www.pinterest.com/theblackstagvormgeving/geboortekaarten/"
+          title="Geïnspireerd door onze geboortekaarten"
         />
       )}
       {subslug === "trouwkaarten" && (
-        <PinterestGallery 
-          boardUrl="https://www.pinterest.com/theblackstagvormgeving/trouwkaarten/" 
-          title="Geïnspireerd door onze trouwkaarten" 
+        <PinterestGallery
+          boardUrl="https://www.pinterest.com/theblackstagvormgeving/trouwkaarten/"
+          title="Geïnspireerd door onze trouwkaarten"
         />
       )}
     </main>

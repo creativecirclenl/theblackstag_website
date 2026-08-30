@@ -14,8 +14,8 @@ const footerContent = {
   phoneNumber: "06 15 202 440",
   address: {
     title: "The Black Stag",
-    street: "De Baan 2",
-    city: "2952 AC Alblasserdam",
+    street: "Vinkenpolderweg 6",
+    city: "2952 AV Alblasserdam",
   },
   services: [
     { name: "Visuele identiteit", link: "/visuele-identiteit" },
@@ -41,8 +41,8 @@ export default function Footer() {
     pathname === "/"
       ? "bg-linear-to-r from-tbsblue to-tbsgreen"
       : pathname === "/diensten"
-      ? "bg-linear-to-r from-tbsorange to-tbsred"
-      : "bg-linear-to-r from-tbsorange to-tbsred";
+        ? "bg-linear-to-r from-tbsorange to-tbsred"
+        : "bg-linear-to-r from-tbsorange to-tbsred";
   return (
     <footer>
       <div className="container flex flex-col md:flex-row items-end justify-between pb-12">

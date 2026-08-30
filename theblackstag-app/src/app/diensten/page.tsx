@@ -1,4 +1,4 @@
-import Intro from "@/components/Home/Intro";
+import Intro from "@/components/Intro";
 import Cases from "@/components/Home/Cases";
 import IntroText from "@/components/Diensten/IntroText";
 import DienstenTable from "@/components/Diensten/DienstenTable";

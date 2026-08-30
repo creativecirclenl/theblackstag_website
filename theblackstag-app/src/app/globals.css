@@ -1,4 +1,7 @@
-@import 'tailwindcss';
+/* Google Fonts - Lora Italic */
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap");
+
+@import "tailwindcss";
 
 @utility container {
   margin-inline: auto;
@@ -36,6 +39,13 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
+  }
+
+  /* Lora Italic utility */
+  .font-lora-italic {
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-weight: 400;
   }
 }
 

@@ -6,7 +6,7 @@ interface DienstenTableProps {
     diensten: {
       title: string;
       slug: string;
-      description: string | React.ReactNode;
+      description: string | React.ReactNode | React.ReactNode[] | string[];
     }[];
   };
 }
@@ -38,9 +38,20 @@ const DienstenTable: React.FC<DienstenTableProps> = ({ content }) => {
                 </Link>}
               </div>
             </div>
-            <p className="md:w-2/3 flex flex-col gap-4 ">
-              {dienst.description}
-            </p>
+            <div className="md:w-2/3 flex flex-col gap-4">
+              {Array.isArray(dienst.description) ? (
+                dienst.description.map((descriptionItem, descriptionIndex) => (
+                  <p
+                    key={`${dienst.slug || dienst.title}-description-${descriptionIndex}`}
+                    className="m-0"
+                  >
+                    {descriptionItem}
+                  </p>
+                ))
+              ) : (
+                <p className="m-0">{dienst.description}</p>
+              )}
+            </div>
           </div>
         ))}
       </div>

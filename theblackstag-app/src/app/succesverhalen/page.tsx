@@ -1,4 +1,4 @@
-import Intro from "@/components/Home/Intro";
+import Intro from "@/components/Intro";
 import SuccesVerhalen from "@/components/SuccesVerhalen";
 
 export default function SuccesVerhalenPage() {
