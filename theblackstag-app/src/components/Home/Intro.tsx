@@ -16,7 +16,7 @@ export default function HomeIntro({
         <svg
           className="absolute top-0 left-0 w-full h-full"
           viewBox="0 0 1200 350"
-          preserveAspectRatio="xMidYMid meet"
+          preserveAspectRatio="xMinYMid meet"
           style={{ pointerEvents: "none" }}
         >
           <defs>
