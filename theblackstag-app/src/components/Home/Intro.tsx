@@ -43,7 +43,7 @@ export default function HomeIntro({
               playsInline
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             >
-              <source src="/videos/testvideo2.webm" type="video/webm" />
+              <source src="/videos/hello-bg.webm" type="video/webm" />
             </video>
           </foreignObject>
         </svg>

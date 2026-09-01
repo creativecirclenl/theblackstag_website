@@ -23,7 +23,7 @@ export default function DesignSteps({ content }: DesignStepsProps) {
             <Accordion content={content.steps} />
           </div>
         </div>
-        <div className="md:absolute top-0 right-0 md:w-1/2 h-[800px] overflow-hidden">
+        <div className="relative h-96 overflow-hidden md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[800px]">
           <Image
             src={content.image}
             alt={content.title}

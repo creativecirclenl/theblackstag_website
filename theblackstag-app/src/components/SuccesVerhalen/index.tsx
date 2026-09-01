@@ -53,7 +53,7 @@ export default function SuccesVerhalen({
             </div>
           </div>
           {index === 3 && (
-            <div className="col-span-2 my-12">
+            <div className="col-span-1 md:col-span-2 my-12">
               <h3 className="w-fit md:w-1/2 text-5xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-none bg-linear-to-r from-tbspurple to-tbsred bg-clip-text text-transparent font-bold">
                 Laten we samenwerken
               </h3>
