@@ -282,8 +282,26 @@ export default async function Page(props: {
               },
               {
                 title: "03. Wat te doen bij langdurige samenwerking?",
-                description:
-                  "Bij een langere samenwerking — vanaf 3 maanden — werk ik met een tijdelijke samenwerkingsovereenkomst. Niet om het ingewikkeld te maken, maar juist om het duidelijk en overzichtelijk te houden. Met vaste dagen of vaste momenten in de week weten we allebei precies waar we aan toe zijn, en blijft de planning rustig en voorspelbaar. Wil je zien hoe zo’n overeenkomst eruitziet? Download hem hier.",
+                description: (
+                  <>
+                    Bij een langere samenwerking — vanaf 3 maanden — werk ik met
+                    een tijdelijke samenwerkingsovereenkomst. Niet om het
+                    ingewikkeld te maken, maar juist om het duidelijk en
+                    overzichtelijk te houden. Met vaste dagen of vaste momenten
+                    in de week weten we allebei precies waar we aan toe zijn, en
+                    blijft de planning rustig en voorspelbaar. Wil je zien hoe
+                    zo'n overeenkomst eruitziet?{" "}
+                    <Link
+                      href="/downloads/overeenkomst-van-opdracht-vanaf-3maanden.pdf"
+                      className="text-tbsyellow"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Download hem hier
+                    </Link>
+                    .
+                  </>
+                ),
               },
               {
                 title: "04. Wat kun je precies uit handen nemen?",
